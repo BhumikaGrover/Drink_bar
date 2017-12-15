@@ -1,0 +1,86 @@
+<ion-view style="" class=" " id="page1" title="Login" hide-nav-bar="true">
+    <ion-content padding="true" style="background: url({{Dynam_image}}) no-repeat center;background-size:cover;" class=" manual-remove-top-padding">
+        <div style="width: 100%; height: 52px;" class="spacer"></div>
+       <div style="width: 100%; height:14vh;" class="spacer"></div>
+<center><img src="img/logo2.png" style="width: 60%;" /></center>
+            <div style="width: 100%; height:7vh;" class="spacer"></div>
+      
+        
+          <center> <a ng-click="facebookSignIn()" ng-controller="sliderCtrl">
+            <img src="img/facebook image.png" width-="500px" height="50px">
+        </a>
+            </center>
+          <h5 style="text-align:center; color:#fff;">{{'Sign_in_with_email'| translate}}</h5>
+       
+          <form class="list border_none" id="login-form2" name="Login" ng-submit="Login.$valid && login()" novalidate>
+            <div class="list logn">
+            <div class="form_sinn">
+            <label id="login-input2" class="item item-input item-floating-label">
+                <span class="input-label">{{'Email_Address'| translate}}</span>
+                <input placeholder="{{'Email_Address'| translate}}" type="email" name="email" ng-model="data.email" required="">
+            </label>
+            <div ng-show="Login.$submitted || Login.email.$touched">
+            <div ng-show="Login.email.$error.required" class="help-inline">{{'Field_required'| translate}}</div>
+            </div>
+            <span ng-show="!Login.email.$error.required && Login.email.$error.email && Login.email.$dirty" class="help-inline">{{'Invalid_Email_Address' | translate}}</span>
+            <label id="login-input3" class="item item-input item-floating-label">
+                <span class="input-label">{{'Password' | translate}}</span>
+                <input placeholder="{{'Password'| translate}}" type="password" name="password" ng-model="data.password" required="">
+            </label>
+            <div ng-show="Login.$submitted || Login.password.$touched">
+            <div ng-show="Login.password.$error.required" class="help-inline">{{'Field_required'| translate}}</div>
+            </div>
+            </div>
+            <button class="button sky_blue  button-block" style="border-radius:0px+6;" id="login-button1">{{'SIGN_IN'| translate}}</button>
+        </div>
+        </form>
+
+          <!--<div class="login_bottom"> 
+          <h5 style="color:#fff; float:left;" id="login-heading1">New here ? 
+          <a ui-sref="menu.signup" style="color:#ccc;padding-left:5px; font-weight:700; text-decoration:none;">Signup</a>
+          </h5> 
+          
+          <h5 style="color:#fff; float:right;" id="login-heading1">
+          <a ui-sref="menu.forgotPassword" style="color:#ccc;padding-left:5px; font-weight:700; text-decoration:none;">Forgot password</a>
+          </h5>
+          
+          </div>-->
+          
+       
+        <div style="width: 100%; height:2vh;" class="spacer"></div>
+            <button ui-sref="menu.signup" class="button button-light  button-block button-clear button_txt1" id="createProfile-button3">{{'New_here'| translate}} <span style="color:#29e6f2;">{{'Sign_Up'| translate}}</span></button>
+            
+            <button ui-sref="menu.forgotPassword" class="button button-light  button-block button-clear button_txt1" id="createProfile-button3">{{'Forgot_Password' | translate}}</button>
+            
+            
+            
+<!--            
+            <div class="row">
+            <div class="col col-50">
+        <ion-radio class="crd_list" name="a" ng-model="choice" style=" width:100%; float:left;"  ng-click="setLang('Deutsche')" ng-controller="signupCtrl">
+       <div class="left_align">
+              <span style="width: 17px;">Deutsche</span> 
+                                            
+       </div>
+        </ion-radio>
+            </div>
+            <div class="col col-50">
+           <ion-radio class="crd_list" name="a" ng-model="choice" style=" width:100%; float:left;"  ng-click="setLang('English')" ng-controller="signupCtrl">
+                   <div class="left_align">
+                          <span style="width: 26px;">English</span>
+                    </div>
+            </ion-radio>
+            </div>
+        </div>-->
+            
+           
+            
+        
+    </ion-content>
+</ion-view>
+<style>
+input[type="password"],input[type="email"]{
+	color: #fff !important; 
+  opacity:1 !important;
+  }
+</style>

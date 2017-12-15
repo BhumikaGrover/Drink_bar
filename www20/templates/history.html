@@ -1,0 +1,89 @@
+<ion-view style="" id="page5" title="Nearest Restaurants"  hide-nav-bar="true">
+
+<ion-header-bar align-title="center" id="div1" class="bar-light" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+  <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+    
+    </div>
+  <h1 style="color:#fff;" class="title">Drink History</h1>
+  <div class="buttons">
+  	<!--<button style="" class="button button-clear icon ion-share"></button>
+    <button style="color:#662483;" class="button button-clear icon ion-ios-heart"></button>-->
+  </div>
+</ion-header-bar>
+    <ion-content class="has-header" padding="false" on-scroll="scrollEvent()" delegate-handle="scrollHandle">
+<!--        <div class="restaurant_list" style="height: 174px;" ng-repeat="history_detail in hist_list">
+            <a  style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="{{history_detail.Product.image}}" height="auto" width="100%">
+                
+                <div class="restaurant_con" style="padding: 15px 5px 6px;">
+                	<div class="heading_txt"> <b>{{history_detail.Product.name}}</b> </div>
+                    <h6 style="padding-top: 6px; margin-bottom:0;">In {{history_detail.Restaurant.name}}</h6>
+                    <span style="font-size: 11px; margin-top: 0px; height: 19px; line-height: 20px;">{{history_detail.Product.created}}</span>
+                </div>
+            </a>
+        </div>-->
+
+<div class="list" ng-if="currentLanguage == 'English'" >
+
+    <a class="item item-thumbnail-left"  ng-repeat="history_detail in hist_list" ng-click="gohistory(history_detail.Restaurant.id,history_detail.Restaurant.latitude,history_detail.Restaurant.longitude)">
+     <img style="display: block; margin-left: auto; margin-right: auto;" src="{{history_detail.Product.image}}" height="auto" width="100%">
+     <div class="heading_txt"> <b>{{history_detail.Product.name}}</b> </div>
+                    <h6 style="font-size: 13px; width: 100%; float: left; padding-top: 6px; margin-bottom:0;">In {{history_detail.Restaurant.name}}</h6>
+                    <span style="font-size: 13px; width: 100%; float: left; margin-top: 0px; height: 19px; line-height: 20px;">{{history_detail.Product.created}}</span>
+    </a>
+</div>
+<div class="list" ng-if="currentLanguage == 'Deutsche'">
+
+    <a class="item item-thumbnail-left"  ng-repeat="history_detail in hist_list" ng-click="gohistory(history_detail.Restaurant.id,history_detail.Restaurant.latitude,history_detail.Restaurant.longitude)">
+     <img style="display: block; margin-left: auto; margin-right: auto;" src="{{history_detail.Product.image}}" height="auto" width="100%">
+     <div class="heading_txt"> <b>{{history_detail.Product.name_german}}</b> </div>
+                    <h6 style="font-size: 13px; width: 100%; float: left; padding-top: 6px; margin-bottom:0;">In {{history_detail.Restaurant.name_german}}</h6>
+                    <span style="font-size: 13px; width: 100%; float: left; margin-top: 0px; height: 19px; line-height: 20px;">{{history_detail.Product.created}}</span>
+    </a>
+</div>
+        
+        
+<!--        <div class="restaurant_list" style="height: 174px;">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/w2.jpg" height="auto" width="100%">
+                
+                <div class="restaurant_con" style="padding: 15px 5px 6px;">
+                	<div class="heading_txt"><b>Smirnoff</b> <span style="float:right; color:#fff;">  </span></div>
+                    <h6 style="padding-top: 6px; margin-bottom:0;">Smirnoff is produced one of the biggest alcohol companies in the world.</h6>
+                    <span style="font-size: 11px; margin-top: 0px; height: 19px; line-height: 20px;">15.01.2017</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="restaurant_list" style="height: 174px;">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/w3.jpg" height="auto" width="100%">
+                
+                <div class="restaurant_con" style="padding: 15px 5px 6px;">
+                	<div class="heading_txt"><b>Leffe Blond</b> <span style="float:right; color:#fff;">  </span></div>
+                    <h6 style="padding-top: 6px; margin-bottom:0;">The light Belgian beer gets its sunny hue from pale malt.</h6>
+                    <span style="font-size: 11px; margin-top: 0px; height: 19px; line-height: 20px;">21.02.2017</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="restaurant_list" style="height: 174px;">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/w4.jpg" height="auto" width="100%">
+                
+                <div class="restaurant_con" style="padding: 15px 5px 6px;">
+                	<div class="heading_txt"><b>Bourbon</b> <span style="float:right; color:#fff;">  </span></div>
+                    <h6 style="padding-top: 6px; margin-bottom:0;">American whiskey: a barrel-aged distilled spirit made primarily from corn</h6>
+                    <span style="font-size: 11px; margin-top: 0px; height: 19px; line-height: 20px;">21.02.2017</span>
+                </div>
+            </a>
+        </div>
+        -->
+        
+        
+        
+       
+        
+    </ion-content>
+</ion-view>

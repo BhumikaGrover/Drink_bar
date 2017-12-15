@@ -1,0 +1,430 @@
+<ion-view style="" id="page5" title="Nearest Restaurants"  hide-nav-bar="true">
+
+
+
+<ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+
+    <div class="buttons">
+
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+
+   
+    </div>
+
+    	<h1 class="title">{{'Plan_Billing'|translate}}</h1>
+
+   	<div class="buttons">
+
+   		
+
+ 	</div>
+
+    
+
+ </ion-header-bar>
+
+    <ion-content class="has-header" padding="true" style="background:url({{Dynam_image}}); background-size:cover;">
+
+        <!--<div class="overlay"> </div>-->
+        
+<!--        <div class ng-if="plan_discddd==1">You got 1 month for 4.99 € instead of 9,99 €</div>-->
+       <!-------------------dicount invite friend----------->
+        <div class="restaurant_list14" ng-if="coupan_used == 'Invite'" ng_repeat="plan_list in plan_montly" style="position: relative; z-index: 999; box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2); background:#000; padding: 17px 0px; border-radius: 3px; margin-bottom: 3%; min-height: 100px; text-align: center;">
+          
+           
+<!--        <img src="{{plan_list.SubscriptionPlan.image}}" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid rgb(255, 255, 255); box-shadow: 0px 0px 7px rgb(255, 255, 255) inset; position: absolute; top: 10px; z-index: 9999; left: 10px;" />-->
+        <ion-radio ng-click="planbuy(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - plan_list.SubscriptionPlan.discount,plan_list.SubscriptionPlan.name,plan_list.SubscriptionPlan.discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" > 
+        <div ng-if="currentLanguage == 'English'">
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 0px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+        <div class="right_radio">
+       
+           
+         
+       <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p>  
+       <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; line-height: 35px;">{{' Discount'|translate}} €{{plan_list.SubscriptionPlan.discount}} </p>
+       <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - plan_list.SubscriptionPlan.discount}} ">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - plan_list.SubscriptionPlan.discount | number : 2}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description}}</span>  
+        </div>
+          <div ng-if="currentLanguage == 'Deutsche'">
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 0px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name_german}} </h2>
+        
+        <div class="right_radio">
+       
+           
+         
+       <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p>  
+       <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; line-height: 35px;"> {{'Discount'|translate}} €{{plan_list.SubscriptionPlan.discount}} </p>
+       <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - plan_list.SubscriptionPlan.discount}} ">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - plan_list.SubscriptionPlan.discount | number : 2}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description_german}}</span>  
+        </div>       
+        </ion-radio>
+    
+        </div>
+       <!--------------discount referral_code--->
+       
+       
+       <div class="restaurant_list14" ng-if="coupan_used == 'Referral'" ng_repeat="plan_list in plan_montly" style="position: relative; z-index: 999; box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2); background:#000; padding: 17px 0px; border-radius: 3px; margin-bottom: 3%; min-height: 100px; text-align: center;">
+          
+           
+<!--        <img src="{{plan_list.SubscriptionPlan.image}}" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid rgb(255, 255, 255); box-shadow: 0px 0px 7px rgb(255, 255, 255) inset; position: absolute; top: 10px; z-index: 9999; left: 10px;" />-->
+<div ng-if="plan_list.SubscriptionPlan.id=='1' && cate_monthly==1">
+
+    <ion-radio  ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,refe_discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >   
+<!--<ion-radio ng-if="plan_list.SubscriptionPlan.id=='2' && cate_yearly==1" ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,refe_discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >-->
+<div ng-if="currentLanguage == 'English'">
+  
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+        <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount_month}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount_year}} </p>
+        
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_month}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price -refe_discount_month}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_year}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount_year}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;"> {{plan_list.SubscriptionPlan.description}}</span>   
+        </div> 
+        <div ng-if="currentLanguage == 'Deutsche'">
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name_german}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+      <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+          <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description_german}}</span>   
+        </div>
+
+        </ion-radio>
+</div>
+
+<div ng-if="plan_list.SubscriptionPlan.id=='2' && cate_yearly==1">
+
+    <ion-radio  ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,refe_discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >   
+<!--<ion-radio ng-if="plan_list.SubscriptionPlan.id=='2' && cate_yearly==1" ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,refe_discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >-->
+<div ng-if="currentLanguage == 'English'">
+    
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+        <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount_month}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount_year}} </p>
+        
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_month}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price -refe_discount_month}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_year}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount_year}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;"> {{plan_list.SubscriptionPlan.description}}</span>   
+        </div> 
+        <div ng-if="currentLanguage == 'Deutsche'">
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name_german}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+      <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+          <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description_german}}</span>   
+        </div>
+
+        </ion-radio>
+</div>
+<div ng-if="plan_list.SubscriptionPlan.id=='2' && cate_yearly==0">
+
+    <ion-radio  ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - 0,plan_list.SubscriptionPlan.name,0)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >   
+<!--<ion-radio ng-if="plan_list.SubscriptionPlan.id=='2' && cate_yearly==1" ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,refe_discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >-->
+<div ng-if="currentLanguage == 'English'">
+    
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+        <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount_month}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount_year}} </p>
+        
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_month}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price -refe_discount_month}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_year}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount_year}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description}}</span>   
+        </div> 
+        <div ng-if="currentLanguage == 'Deutsche'">
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name_german}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+      <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+          <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description_german}}</span>   
+        </div>
+
+        </ion-radio>
+</div>
+<div ng-if="plan_list.SubscriptionPlan.id=='2' && cate_monthly==0 && cate_yearly==1">
+
+    <ion-radio  ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,refe_discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >   
+<!--<ion-radio ng-if="plan_list.SubscriptionPlan.id=='2' && cate_yearly==1" ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,refe_discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >-->
+<div ng-if="currentLanguage == 'English'">
+    
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+        <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount_month}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount_year}} </p>
+        
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_month}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price -refe_discount_month}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_year}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount_year}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description}}</span>   
+        </div> 
+        <div ng-if="currentLanguage == 'Deutsche'">
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name_german}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+      <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+          <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description_german}}</span>   
+        </div>
+
+        </ion-radio>
+</div>
+<div ng-if="plan_list.SubscriptionPlan.id=='1' && cate_yearly==0  && cate_monthly==1">
+
+    <ion-radio  ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,refe_discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >   
+<!--<ion-radio ng-if="plan_list.SubscriptionPlan.id=='2' && cate_yearly==1" ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,refe_discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >-->
+<div ng-if="currentLanguage == 'English'">
+    
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+        <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount_month}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount_year}} </p>
+        
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_month}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price -refe_discount_month}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_year}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount_year}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description}}</span>   
+        </div> 
+        <div ng-if="currentLanguage == 'Deutsche'">
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name_german}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+      <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+          <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description_german}}</span>   
+        </div>
+
+        </ion-radio>
+</div>
+<div ng-if="plan_list.SubscriptionPlan.id=='1' && cate_monthly==0">
+
+    <ion-radio  ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - 0,plan_list.SubscriptionPlan.name,0)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >   
+<!--<ion-radio ng-if="plan_list.SubscriptionPlan.id=='2' && cate_yearly==1" ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,refe_discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" >-->
+<div ng-if="currentLanguage == 'English'">
+    
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+        <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount_month}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount_year}} </p>
+        
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_month}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price -refe_discount_month}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount_year}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount_year}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description}}</span>   
+        </div> 
+        <div ng-if="currentLanguage == 'Deutsche'">
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 7px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name_german}} </h2>
+        
+        <div class="right_radio">
+        
+           
+         
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; width:100%; text-align: right; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p> 
+      <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+             <p style="color:#ff0000; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1"> {{'Discount'|translate}} €{{refe_discount}} </p>
+          <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==1 && cate_monthly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; width:100%; text-align: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} " ng-if="plan_list.SubscriptionPlan.id==2 && cate_yearly==1">{{'Pay'|translate}} €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        </div>
+        <span style="color: #fff; width: 54%; float: left; font-size: 10px;text-align: center; margin-top: 0;white-space: normal;">{{plan_list.SubscriptionPlan.description_german}}</span>   
+        </div>
+
+        </ion-radio>
+</div>
+        </div>
+       
+       
+       
+       
+       
+<!--       <div class="restaurant_list14" ng-if="coupan_used == 'Referral'" ng_repeat="plan_list in plan_montly" style="position: relative; z-index: 999; box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2); background: rgba(0, 0, 0, 0.6) none repeat scroll 0px 0px; padding: 17px 0px; border-radius: 3px; margin-bottom: 3%; min-height: 100px; text-align: center;">
+          
+           
+        <img src="{{plan_list.SubscriptionPlan.image}}" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid rgb(255, 255, 255); box-shadow: 0px 0px 7px rgb(255, 255, 255) inset; position: absolute; top: 10px; z-index: 9999; left: 10px;" />
+        <ion-radio ng-click="planbuy2(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - refe_discount,plan_list.SubscriptionPlan.name,plan_list.SubscriptionPlan.discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" > 
+        
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 0px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+<div class="right_radio">
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; float: right; line-height: 35px;"> Amount €{{plan_list.SubscriptionPlan.price}} </p>
+           
+         
+    
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; float: right; line-height: 35px;"> Discount €{{refe_discount}} </p>
+           
+        
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; float: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - refe_discount}} ">Pay €{{plan_list.SubscriptionPlan.price - refe_discount}} </p>
+        
+        <span style="color: rgb(255, 255, 255); width: 58%; float: left; font-size: 15px;text-align: left; margin-top: 10px;">{{plan_list.SubscriptionPlan.description}}</span>    
+</div>
+        </ion-radio>
+    
+        </div>
+        -->
+        <!------------------simple plans ------------------->
+        
+       <div class="restaurant_list14" ng-if="coupan_used != 'Invite' && coupan_used != 'Referral'" ng_repeat="plan_list in plan_montly" style="position: relative; z-index: 999; box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2); background:#000; padding: 17px 0px; border-radius: 3px; margin-bottom: 3%; min-height: 100px; text-align: center;">
+          
+           
+<!--        <img src="{{plan_list.SubscriptionPlan.image}}" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid rgb(255, 255, 255); box-shadow: 0px 0px 7px rgb(255, 255, 255) inset; position: absolute; top: 10px; z-index: 9999; left: 10px;" />-->
+        <ion-radio ng-click="planbuy1(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.name)" style="float: left; background: transparent; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" > 
+         <div ng-if="currentLanguage == 'English'">
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 0px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+       
+<div class="right_radio">
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p>{{coupan_used}}
+       </div> 
+        <span style="color: #fff; white-space: normal; width: 100%; float: left; font-size: 11px;text-align: center; margin-top: 10px;">{{plan_list.SubscriptionPlan.description}}</span>
+</div>
+<div ng-if="currentLanguage == 'Deutsche'">
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 0px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name_german}} </h2>
+        
+       
+<div class="right_radio">
+        <p style="color: #29E6F2; margin-top: 0px; margin-bottom: 0px; float: right; line-height: 35px;"> {{'Amount'|translate}} €{{plan_list.SubscriptionPlan.price}} </p>{{coupan_used}}
+       </div> 
+        <span style="color: #fff; white-space: normal; width: 100%; float: left; font-size: 11px;text-align: center; margin-top: 10px;">{{plan_list.SubscriptionPlan.description_german}}</span>
+</div>
+        </ion-radio>
+    
+        </div>
+       <!---------------------------------------------------->
+        
+<ul class="list bg_none" ng-if="coupanused != 0">
+     <form ng-submit="referral_plans()" ng-controller="coupanCtrl">
+          <span class="code">{{'Invite_Code'|translate }}</span>
+    <li class="item bg_none" style="padding: 30px 10px 5px;">
+       
+  
+   <input type="text" style="color:black;" class="white01" ng-model="data.plan_dis" name="re"/>
+   
+   <button type="submit" style="width: auto;float: none;padding: 4px 0px; background: transparent; border: none; font-size:14px;text-decoration:underline;display: block;margin: 0 auto;color: #fff;" >{{'Apply_Code'|translate}}</button>
+
+    </li>
+     </form>
+</ul>
+       <!-------remove code-------->
+       <ul class="list bg_none"  ng-if="coupanused == 0">
+     <form >
+<!--          <span class="code">Invite Code</span>-->
+    <li class="item bg_none" style="padding: 30px 10px 5px;">
+       
+   <input type="text" readOnly class="white01" value="{{coupan_code}}" name="re"/>
+ 
+   
+   <button type="submit" style="width: auto;float: none;padding: 4px 0px; background: transparent; border: none; font-size:14px;text-decoration:underline;display: block;margin: 0 auto;color: #fff;" ng-click="removecode()">{{'Remove_Code'|translate}}</button>
+
+    </li>
+     </form>
+</ul>
+       <!--------------->
+<!--    <button class="button button-assertive  button-block paypal_btn" id="buyNowBtn" style="font-size:13px; margin:0;border-radius: 2px; background:#29E6F2;" ng-if="coupanused == 0" ng-click="removecode()">Remove code</button>-->
+<div class="spacer" style="height:4vh;float:left; width:100%;"></div>
+
+
+    </ion-content>
+
+   <div class="bar bar-footer " style="padding:0; background:none;">
+    <div id="payment-button-bar1" class=" button-bar">
+              <button class="button button-assertive  button-block paypal_btn" id="buyNowBtn" style="font-size:13px; margin:0;border-radius: 2px; background:#29E6F2;">{{'pay_button'|translate}}</button>
+            </div>
+</div>
+
+
+</ion-view>
+
+<style>
+
+.item-radio input:checked + .radio-content .item-content {
+    background: #000 !important;
+    min-height: 100px !important;
+}
+.item-complex .item-content, .item-radio .item-content{
+    padding: 16px 49px 16px 22px;
+    position: unset;
+}
+.restaurant_list14 .item-radio{
+    height: 100px !important;
+    min-height: 100px !important;
+    border-radius: 3px;
+}
+.radio-content,.item-content{
+    height: 100px;
+}
+
+</style>

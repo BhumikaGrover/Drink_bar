@@ -1,0 +1,49 @@
+<ion-view style="" id="page7" title="Restaurant Details" hide-nav-bar="true">
+<ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+  <div class="buttons">
+    <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+  </div>
+  <h1 class="title">{{'Free_Months'| translate}}</h1>
+
+</ion-header-bar>
+    <ion-content class="has-header" padding="true" on-scroll="scrollEvent()" delegate-handle="scrollHandle" style="background:url({{Dynam_image}}); background-size:100%;">
+    
+    	<div class="form_sinn">
+        <div class="discover">
+        		<center><div class="pick77"><img src="img/money.png" style="box-shadow: 0px 0px 5px rgb(0, 0, 0);position: absolute;top: -2px;left: -7px;right: 0;bottom: 0;margin: auto;min-width: 175px;" /></div>
+           <h2 style="color: rgb(255, 255, 255); text-align: center; padding: 10px 0px; margin-top: 0px; font-size: 21px;"> {{'Earn_A_Free_Month_Now' | translate}}</h2> 
+       </center> </div>
+        
+        
+        	<div class="code" style="position:relative;left:auto; height:auto;background:transparent; width:100%; float:left; border:1px solid #fff;"> 
+            <span style="position: absolute; right: 0px; bottom: 0px; left: 0px; margin: 0px auto; top: -11px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: rgb(68, 68, 68); padding: 3px 9px; width: 32%; height: 25px; border-radius: 2px;"> {{'Your_Code'| translate}}</span>
+            <input type="text" style="text-align: center; width: 90%; background: rgb(255, 255, 255) none repeat scroll 0% 0%; height: 30px; float: left; line-height: 28px; margin: 22px 5% 2%; border-radius: 2px; color: #000 !important;" value="{{User_data.coupon_code}}" readonly> 
+            </div>
+        
+        
+        
+        <p style="width: 100%; float: left; color: rgb(255, 255, 255); margin-top: 8%; font-size: 13px; background: rgba(0, 0, 0,0.5) none repeat scroll 0% 0%; padding: 16px 12px;">{{'Invite_your_friends_and_your_friends_will_receive_1_drink_for_free_and_will_pay_only_499_instead_of_999_for_their_first_month_For_every_new_friend_who_becomes_a_member_you_get_1_FREE_MONTH_for_yourself_You_can_earn_up_to_6_Month_for_free_Start_now_inviting_your_friends' | translate}}
+ </p>
+        
+ <p style="width: 100%;
+float: left;
+color: rgb(255, 255, 255);
+margin-top: 0%;
+font-size: 16px;
+background: rgba(0, 0, 0,0.5) none repeat scroll 0% 0%;
+padding: 16px 12px;
+text-align: center;
+line-height: 23px;
+"> {{"You_have_earned"| translate}}<b style="background: #db0027;
+margin-left: 2px;
+margin-right: 5px;
+padding: 1px 2px 1px 4px;
+">{{counter_drink}} </b> {{"free_Month" | translate }} <br>{{"out_of_6_Month_possible" | translate}}</p>
+        
+        <button class="button button-outline button-positive" style="border-radius: 2px; border-color: rgb(255, 255, 255); color: rgb(255, 255, 255); line-height: 17px; min-height: 41px; width: 100%; margin-top: 4%;" ng-click="invite_friend(User_data.coupon_code)">
+  {{'Invite_More_Friends_to_Earn'| translate}}
+</button>
+        </div>  
+    </ion-content>
+    
+</ion-view>

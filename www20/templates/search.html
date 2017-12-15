@@ -1,0 +1,230 @@
+<ion-modal-view>
+     
+   <ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+<!--    <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="colo   <ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+r:#fff; display:block;"></button>
+    </div>-->
+    	<h1 class="title" style="line-height: 1; left: 49px; right: 49px;">
+        	<img src="img/logo2.png" style="max-width: 100%;width: 32%;margin-top: 2%;line-height: 33px;height: 33px;" /> 
+       </h1>
+   	<div class="buttons">
+   		<button class="icon placeholder-icon close_icon" ng-click="$ionicGoBack()" style="position: absolute; top: 0;"><i class="ion-close-circled" style="color: rgb(255, 255, 255); font-size: 18px; opacity: 0.8;"> </i></button>
+ 	</div>
+    
+ </ion-header-bar>
+    
+    <ion-pane>
+     	  <form ng-submit="search_city1(data.city)" ng-controller="citylistingCtrl">        
+   <ion-content class="has-header has-footer " padding="true" style="background:url({{Dynam_image}}) no-repeat; background-size:cover;">  
+     
+    
+          <div class="transparent_bg">
+        <div class="" style="background:none; border-radius:0;width: 100%;float: left;"> 
+        
+        
+<!--        <input class="srch" type="search"  ng-model="data.city"  ng-change="selectedterm(data.city)" placeholder="Enter Your location" g-places-autocomplete options="agutocompleteOptions" details="details" style="float: left; width: 100%; background: transparent none repeat scroll 0% 0%; color: rgb(255, 255, 255);">-->
+        	
+            <h5 style="color:#ccc; margin: 0;">Search Venue</h5>
+            <div class="group martinput input_outers" style="margin-top:10px; height: auto; padding-bottom: 10px;">
+              <input class="srch" type="text"  ng-model="data.city"   name="city" placeholder="{{'Enter_Venue_Name'| translate}}">
+              <button  type="submit" style="background: transparent; border: none; display: inline-block; height: 24px;" class="icon placeholder-icon search_icn" style="display:block; top:15px !important;"><i style="color:#fff;font-size: 20px;" class="ion-android-search"></i></button>
+<!--             <button style="
+    position: absolute;
+    right: 0;
+    top: 6px;
+    height: 27px;
+    background: transparent; border: none" class="icon placeholder-icon close_iconn" ng-click="geo_loaction()" ng-controller="locationCtrl">
+            <i class="ion-navigate" style="color:#fff; font-size: 16px;"> </i>
+            </button>-->
+          </div> 
+
+        </div>
+       
+        <!--<i class="icon placeholder-icon search_icn" ng-click="search()"><img src="img/search_loc.png"></i>
+        <button class="icon placeholder-icon close_icon" ui-sref="menu.nearestRestaurants"><img style="margin-top:10px;" src="img/delete.png"></button>-->
+    </div>
+       <div class="transparent_bg">
+           <div class="maintoggle" style="border:none;">
+            <div style="width: 75%; float: left;" >
+                <span style="width: 100%;float: left;font-size: 14px;color: #fff;padding-left: 0px;margin-bottom: 8px; font-family: 'montserratregular'; color: #ccc;"> {{'Recommended_Venues' | translate}} </span>
+            </div>
+<!--    <div style="width: 75%; float: left;"  ng-repeat="venu in top_venus" ng-click="top(venu.RecommandedCategory.id)">
+        <span style="width:100%; float: left; font-size: 16px; color:#fff; padding-left: 5px;"> {{venu.RecommandedCategory.name}}</span>
+        </div>-->
+<!--<div class="select_box" style="width:100%; float: left; position: relative">
+    <span class="arrow_sel"></span>
+    <select style="-webkit-appearance: none; -moz-appearance: none; background: transparent; border-radius: 0px; border: 1px solid #fff; color: #fff;;padding: 6px 33px; width:100%;" ng-model="data.neme" ng-change="top(data.neme)">
+        <option></option>
+        <option ng-repeat="venu in top_venus"  value="{{venu.RecommandedCategory.id}}" >{{venu.RecommandedCategory.name}}</option>
+    </select>
+</div>-->
+ <ul class="cities" ng-repeat="venu in top_venus" ng-if="currentLanguage == 'English'"> 
+            <ion-select ng-click="top(venu.RecommandedCategory.id)" ng-controller="citylistingCtrl" ng-value="{{venu.RecommandedCategory.id}}" style="text-transform: capitalize;"><li>{{venu.RecommandedCategory.name}}</li></ion-select>
+
+        </ul>
+<ul class="cities" ng-repeat="venu in top_venus" ng-if="currentLanguage == 'Deutsche'"> 
+            <ion-select ng-click="top(venu.RecommandedCategory.id)" ng-controller="citylistingCtrl" ng-value="{{venu.RecommandedCategory.id}}" style="text-transform: capitalize;"><li>{{venu.RecommandedCategory.name_german}}</li></ion-select>
+
+        </ul>
+       </div>
+       </div>
+<div class="spacer" style="width: 100%; float: left; height:2vh;"> </div>
+<div class="transparent_bg">
+ <h5 style="color:#ccc; margin: 0;">{{'Available_Cities'| translate}}</h5>
+<!--		<label style="width: 100%; float: left; font-size: 12px; color: #fff; padding-left: 5px;">Available Cities</label>-->
+        <ul class="cities" ng-repeat="city_available in all_city"> 
+            <ion-select ng-click="search_city(city_available)" ng-controller="citylistingCtrl" ng-value="{{city_available}}" style="text-transform: capitalize;"><li>{{city_available}}</li></ion-select>
+
+        </ul>
+</div>
+                <div class="spacer" style="height:5vh;float: left;width:100%;"></div>
+
+ 
+    
+     
+     </ion-content> 
+              
+              <div class="bar bar-footer" style="padding:0px;">
+                   <a class="button sky_blue  button-block" style="font-size: 16px; line-height:40px; width:100%;border-radius:0;margin:0px;" id="search-button3" ng-click="geo_loaction1()" ng-controller="locationCtrl">{{'Show_Venues_near_by_me'| translate}}</a>  
+              </div>
+              
+    </form>
+    </ion-pane>
+             
+           
+    
+            
+  </ion-modal-view>
+  
+<style>
+form{width:100%;float:left;}
+
+.search_icn {
+    position: absolute;
+    right: 4px !important;
+    top: 8px !important;
+    bottom: 28px;
+}
+.close_icon{
+    position: absolute;
+    top: 26px;
+}
+.martinput input{
+    color:#fff;
+    width:100%;
+    border-radius: 0px;
+}
+.martinput input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff !important;;
+  opacity: 1 !important;
+}
+.martinput input::-moz-placeholder { /* Firefox 19+ */
+   color: #fff !important;
+   opacity: 1 !important;
+}
+.martinput input:-ms-input-placeholder { /* IE 10+ */
+    color: #fff !important;;
+    opacity: 1 !important;
+}
+.martinput input:-moz-placeholder { /* Firefox 18- */
+    color: #fff !important;;
+    opacity: 1 !important;
+}
+
+.srch ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff !important;
+    opacity: 1 !important;
+}
+.srch ::-moz-placeholder { /* Firefox 19+ */
+  color: #fff !important;
+    opacity: 1 !important;
+} 
+.srch :-ms-input-placeholder { /* IE 10+ */
+  color: #fff !important;
+    opacity: 1 !important;
+}
+.srch :-moz-placeholder { /* Firefox 18- */
+  color: #fff !important;
+    opacity: 1 !important;
+}
+
+</style><!--<ion-view style="" id="page5"  hide-nav-bar="true">
+
+     
+     <div class="bar bar-header item-input-inset" style="background:none; border:none;">
+    <form>
+        <div class="item-input-wrapper" style="background:none; border-bottom:1px solid #ddd; border-radius:0;width: 92%;float: left;">
+        
+        <input class="srch" type="text"  ng-model="data.city"   name="city" placeholder="Enter Your location"  >
+        </div>
+        <i class="icon placeholder-icon search_icn" ng-click="search_city()"><img src="img/search_loc.png"></i>
+        <button class="icon placeholder-icon close_icon" ui-sref="menu.nearestRestaurants"><img style="margin-top:10px;" src="img/delete.png"></button>
+     </form>
+</div>
+     
+     
+      
+   
+    <ion-content class="has-header" padding="true" style="background:#fefefe;">
+      <div class="padding">
+      
+      <div class="list">
+      <div class="list_outer">
+      <span class="deduct_location"><i class=""><img src="img/detect.png"></i></span>
+		 <span class="detect">DETECT MY LOCATION</span>
+      
+      
+<a class="search_item" ng-click="top()">
+       Top bar
+      </a>
+<div class="elect_button" ng-repeat="city_available in all_city">
+
+
+    <ion-select ng-click="search_city(city_available)" class="item-text-wrap" ng-model="data.city" ng-value="{{city_available}}">{{city_available}}</ion-select>
+
+    </div>
+     
+                                                                               
+    </ion-content>
+  </ion-view>
+  
+<style>
+form{width:100%;float:left;}
+.close_icon{
+    position: absolute;
+    top: 26px;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #000;
+  opacity: 1 !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+   color: #000;
+   opacity: 1 !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #000;
+    opacity: 1 !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #000;
+    opacity: 1 !important;
+}
+
+.srch ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #000 !important;
+}
+.srch ::-moz-placeholder { /* Firefox 19+ */
+  color: #000 !important;
+} 
+.srch :-ms-input-placeholder { /* IE 10+ */
+  color: #000 !important;
+}
+.srch :-moz-placeholder { /* Firefox 18- */
+  color: #000 !important;
+}
+
+</style>-->

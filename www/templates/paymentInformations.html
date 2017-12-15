@@ -1,0 +1,82 @@
+<ion-view style="" id="page3" title="Payment Informations" hide-nav-bar="true">
+    
+    <ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+   <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+    	<h1 class="title" style="line-height:1;"><span class="top_title">Subscription Plan</span></h1> 
+   	
+    
+ </ion-header-bar>
+   <ion-content class="has-header" padding="true" style="background:url(img/slide5.png) no-repeat; background-size:100%;">  
+        
+    
+    
+  <div class="spacer" style="width: 100%; float: left; height:5vh;"> </div>  
+    
+   <center style="width: 100%;float: left;border: 1px solid #a8a4a466;padding: 10px 11px;box-shadow: 0px 0px 6px #000;background: #0000;border-radius: 2px;">
+        <img src="{{planimage}}" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid rgb(255, 255, 255); box-shadow: 0px 0px 7px rgb(255, 255, 255) inset;">
+        <h2 style="color:#ececec; padding: 7px 0px; position: relative; z-index: 999; text-transform: capitalize; margin-top: 0px; width: 100%; margin-bottom: 1%; font-size: 16px; text-align: left;"> {{planname}}<span style="float:right; color:#ececec;"> $ {{plan_price}} </span> </h2>
+       <p style="color: rgb(209, 209, 209); margin-top: 0px; margin-bottom: 10px; text-align: justify;font-size: 13px;"> {{description}}</p> 
+
+            <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px;" class="ng-binding">  </p></center>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   <!--  <ion-content class="has-header" overflow-scroll="true" padding="true" style="background: url() no-repeat center; background-size:cover; top:0;">
+    <div style="width: 283px; height: 65px;" class="spacer"></div>
+        <ion-list style=""></ion-list>
+        <ion-list style="">
+
+        
+            <ion-item style="" class="item-thumbnail-left bgnone">
+                <img src="img/ey1Nv29KQPifjHk2bfJT_apple.png">
+                <h2><span class="left">Apple Pay </span><i data-tags="mail, redo" data-pack="default" class="ion-forward for_right"></i></h2>
+            </ion-item> -->
+           
+           
+           
+           
+          
+
+
+           <!--  <div id="payment-button-bar1" class=" button-bar">
+              <button class="button button-positive  button-block" id="buyNowBtn" ng-controller="logoutCtrl" ng-click="Logout_function()">Logout</button>
+            </div>
+           -->
+            <!-- <ion-item style="" class="item-thumbnail-left bgnone" id="buyNowBtn">
+                <img src="img/xqJSm8X6RkOMtdpTl1GS_pp-logo-200px.png">
+                <h2><i data-tags="mail, redo" data-pack="default" ></i></h2>
+            </ion-item> -->
+           <!--  <ion-item style="" ui-sref="menu.cardDetails" class="item-thumbnail-left bgnone">
+                <img src="img/5kgU3LPjRbSiZAQXsA8x_creditc.png">
+                <h2><span class="left">Credit card</span><i data-tags="mail, redo" data-pack="default" class="ion-forward for_right"></i></h2>
+            </ion-item>
+             <ion-item style="" class="item-thumbnail-left bgnone">
+                <img src="img/XIkxslfoTDW2eGDmnM2i_android.png">
+                <h2><span class="left">Android Pay</span><i data-tags="mail, redo" data-pack="default" class="ion-forward for_right"></i></h2>
+            </ion-item> -->
+<!--            <ion-item style="" class="item-thumbnail-left bgnone">
+                 <button id="buyNowBtn"> Buy Now !</button>
+  <button id="buyInFutureBtn"> Pay in Future !</button>
+  <button id="profileSharingBtn"> Profile Sharing !</button>
+            </ion-item>-->
+       
+    </ion-content>
+    
+    <div class="bar bar-footer " style="padding:0; background:none;">
+    <div id="payment-button-bar1" class=" button-bar">
+              <button class="button button-assertive  button-block paypal_btn" id="buyNowBtn" style="margin:0;border-radius: 2px; background:#29E6F2;">Pay With Paypal</button>
+            </div>
+</div>
+
+
+</ion-view>

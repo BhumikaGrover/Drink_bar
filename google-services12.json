@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "628897215083",
+    "firebase_url": "https://boozie-free-drinks-everyday.firebaseio.com",
+    "project_id": "boozie-free-drinks-everyday",
+    "storage_bucket": "boozie-free-drinks-everyday.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628897215083:android:932a3f13dbe0c608",
+        "android_client_info": {
+          "package_name": "com.heissam.boozie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628897215083-48kfmjrqstmirc64qfbscbjamfr77rrv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAmTRrv1TdvpvWuqZwlzdolKbSr_8M2v8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

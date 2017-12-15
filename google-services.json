@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "192119325241",
+    "firebase_url": "https://boozie-9e265.firebaseio.com",
+    "project_id": "boozie-9e265",
+    "storage_bucket": "boozie-9e265.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192119325241:android:0d15a71b1e156264",
+        "android_client_info": {
+          "package_name": "com.boozie.a1421"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192119325241-imuu1vvul9rmbe3c4df22rhkhtejbf3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb5nfQcs4ft1XtANzDsumzXlpo8uqx-1c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

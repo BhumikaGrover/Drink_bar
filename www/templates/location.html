@@ -1,0 +1,77 @@
+<ion-view style="" class=" " id="page3" title="Home" hide-nav-bar="true" >
+   <ion-header-bar align-title="center" id="div1" class="bar-light map_header">
+        <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+    </div>
+<!--  <div class="buttons">
+    <button ng-click="logout()" ng-controller="profileCtrl" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>-->
+  <!-- <h1 class="title">Berlin</h1> -->
+  <!--<div class="buttons">
+    <button class="heart_icon" style="padding-top:5px;"><img src="img/heart-active.png" width="20px"></button>
+  </div>-->
+</ion-header-bar>
+    <ion-content scroll="true" padding="true" style="background: url({{Dynam_image}}) no-repeat center;background-size:cover; top: 0;" class="manual-ios-statusbar-padding">
+    <div style="width: 100%; height: 20vh;" class="spacer"></div>
+      
+<center><img src="img/logo2.png" style="width: 60%;" /></center>
+            <div style="width: 100%; height:13vh;" class="spacer"></div>
+        <div class="location">
+        <form style="margin-bottom:0px;" class="list border_none" id="search-form4" ng-submit="search(data.city)" novalidate>
+           <div class="form_sinn">
+            <label id="search-input9" class="item item-input item-floating-label srch_inpt">
+<!--                <span class="input-label">Enter Your location</span>-->
+<input class="srch" type="search"  ng-model="data.city" options="options" details="details" placeholder="{{'Search_Venue_Name'| translate}}" id="autocomplete" required >
+<!--                <input placeholder="Enter Your location" type="text">-->
+<!--      <input class="srch" type="search" g-places-autocomplete ng-model="data.city" ng-change="selectedterm(data.city)" options="options" details="details" placeholder="Search venue name" id="autocomplete" required >-->
+         
+            </label>
+           </div>
+        <button class="button sky_blue  button-block" style="border-radius:0; margin-bottom: 0px;" id="search-button3">{{'Search_Venue'| translate}}</button>
+                
+            </form>
+            <button class="button sky_blue01  button-block" style="border-radius:0;float:left;" id="search-button3" ng-click="geo_loaction()">{{'Venues_near_by_me'| translate}}</button>
+                <button class="button sky_blue01  button-block" style="border-radius:0;" id="search-button3" ng-click="allcities()">{{'Show_All_Cities'| translate}}</button>
+       
+<!--         <button class="button-clear icon ion-ios-navigate location_icon" ng-click="geo_loaction()"></button>-->
+          </div>
+
+<!--          <div class="row">
+            <div class="col col-50">
+        <ion-radio class="crd_list" name="a" ng-model="choice" style=" width:100%; float:left;"  ng-click="setLang('Deutsche')" ng-controller="signupCtrl">
+       <div class="left_align">
+              <span style="width: 17px;">Deutsche</span> 
+                                            
+       </div>
+        </ion-radio>
+            </div>
+            <div class="col col-50">
+           <ion-radio class="crd_list" name="a" ng-model="choice" style=" width:100%; float:left;"  ng-click="setLang('English')"ng-controller="signupCtrl">
+                   <div class="left_align">
+                          <span style="width: 26px;">English</span>
+                    </div>
+            </ion-radio>
+            </div>
+        </div>-->
+        </ion-content>
+</ion-view>
+<style>
+input[type="search"]{
+	color: #fff !important; 
+  opacity:1 !important;
+  }
+  
+  .srch::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff !important;
+}
+.srch::-moz-placeholder { /* Firefox 19+ */
+  color: #fff !important;
+} 
+.srch:-ms-input-placeholder { /* IE 10+ */
+  color: #fff !important;
+}
+.srch:-moz-placeholder { /* Firefox 18- */
+  color: #fff !important;
+}
+  
+</style>

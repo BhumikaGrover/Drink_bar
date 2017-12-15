@@ -1,0 +1,72 @@
+ <ion-view style="" id="page3" title="">
+    <ion-content class="has-header" padding="true">
+    
+    	<div class="profile">
+        	<div class="user_propic">
+            	<div class="user_img"><img src="{{profilepic}}" alt="" /></div>
+            </div>
+            <h5>{{User_data.name}}<a href="#" ui-sref="menu.editinfo"><i class="ion-compose"></i></a></h5>
+            <p>{{'Phone_number'|translate}}: {{User_data.phone}}</p>
+            <p>{{User_data.email}}</p>
+            <p> {{'Member_status'|translate}}: {{status}}</p>
+        </div>
+    
+  
+        <div style="width: 283px; height: 83px;" class="spacer"></div>
+        
+        <div class="list pro_list">
+
+  
+<a class="item" ui-sref="menu.editinfo" >
+    <i class="pro_icon fa fa-user"></i>
+    {{'Edit_Profile'|translate}}
+    <i class="pro_iconr ion-ios-arrow-right"></i>
+  </a>
+  <a class="item" ui-sref="menu.changepassword" ng-hide="face_book == 1">
+    <i class="pro_icon ion-locked"></i>
+    {{'Change_Password'|translate}}
+    <i class="pro_iconr ion-ios-arrow-right"></i>
+  </a>
+
+
+            <label class="item item-input item-select" style="padding-left: 0;  border-left: 0;    border-right: 0;    padding: 8px 0;">
+    <div class="input-label">
+    <i class="pro_icon ion-ios-world"></i>    
+        
+      {{"Change_Language" |translate}}
+    </div>
+                
+    <select ng-model='data.choice' ng-change="setLang_profile(data.choice,7)">
+        <option value="English">English</option>
+      <option  value="Deutsche"> Deutsch</option>
+      
+    </select>
+  </label>
+
+</div>
+<div class="custom_padding" style=" padding-left: 0; padding-right: 0px  " ng-click="logout()">
+        <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2"><i style="margin-right:5px;" class="fa fa-sign-out"></i>{{'SIGN_OUT'| translate}}</a>
+        </div>
+        
+        
+    </ion-content>
+</ion-view>
+
+
+
+<style>
+    
+   .pro_list .input-label {
+    border-left: medium none;
+    border-right: medium none;
+    font-size: 12px;
+    padding-left: 0;
+    padding-right: 40px;
+    text-transform: uppercase;
+        color: #4C4C4C !important;
+    font-family: 'montserratsemibold';
+} 
+    
+    
+    
+</style>

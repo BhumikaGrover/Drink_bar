@@ -1,0 +1,62 @@
+<ion-view title="Menu" id="" hide-nav-bar="true">
+
+
+  <ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+    <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+        <h1 class="title" style="line-height: 1; left: 49px; right: 49px;">
+            <img src="img/logo2.png" style="max-width: 100%;
+    width: 30%;margin-top: 2%;line-height: 33px;height: 33px;" /> 
+        </h1>
+ </ion-header-bar>
+    <ion-content class="has-header" padding="false" style="background:#fff; top:44px;">
+		
+        <div  class="cat_listing_box single_img">
+            <img style="height:100%;  width: 100%; height: auto; " src="{{productDetail.Product.image}}" alt="">
+<!--                <h5 class="winedetailspge" style="bottom: 58px;font-weight: normal !important;font-size: 15px;width: auto;border-radius: 0 8px 8px 0;padding:8px;">{{productDetail.Product.category}}</h5>-->
+               <h3 class="winedetailspge" ng-if="currentLanguage == 'English'">{{productDetail.Product.name}}</h3>
+               <h3 class="winedetailspge" ng-if="currentLanguage == 'Deutsche'">{{productDetail.Product.name_german}}</h3>
+        </div>
+        
+ <div style="padding:0 1%;">
+     <button class="button button-block button-positive"  ng-if="Product_quantity > Product_sell"  ng-click="startTimer(productDetail.Product.id)" style="border-radius:2px; background:#29e6f2;">{{'Select_this_free_drink'|translate}}</button>
+     <button class="button button-block button-positive" ng-if="Product_sell >= Product_quantity" style="line-height: 20px; font-size: 14px;  background:#29e6f2;">{{'Drink_at_the_moment_not_available_Please_choose_another_Drink'| translate}}
+</button>
+ </div>
+        
+         <div style="padding:0 1.5%;">
+         <h4 style="color: rgb(68, 68, 68); margin-bottom: 2%; border-bottom: 1px solid rgb(204, 204, 204); padding: 11px 0px 9px; font-size: 15px;">  {{'DESCRIPTION'|translate}} <span style="float:right; color:#444;"></span></h4>
+         	<p style="font-size: 12px;" ng-if="currentLanguage == 'English'"> {{productDetail.Product.description}}</p>
+            <p style="font-size: 12px;" ng-if="currentLanguage == 'Deutsche'"> {{productDetail.Product.description_german}}</p>
+                <h4 style="color: rgb(68, 68, 68); margin-bottom: 2%; border-bottom: 1px solid rgb(204, 204, 204); padding: 11px 0px 9px; font-size: 15px;">{{'CATEGORY'|translate}}</h4> 
+                <p ng-if="currentLanguage == 'English'">{{productDetail.Product.category}}</p>
+                <p ng-if="currentLanguage == 'Deutsche'">{{productDetail.Product.category_german}}</p>
+         
+         </div>
+          <div style="padding:0 1.5%;" ng-if="productDetail.Product.ingredients != ''">
+         <h4 style="color: rgb(68, 68, 68); margin-bottom: 2%; border-bottom: 1px solid rgb(204, 204, 204); padding: 11px 0px 9px; font-size: 15px;"> {{'INGREDIENTS'|translate}}<span style="float:right; color:#444;"></span></h4>
+         	<p style="font-size: 12px;"> {{productDetail.Product.ingredients}}</p>
+<!--            <p style="font-size: 12px;" ng-if="currentLanguage == 'Deutsche'"> {{productDetail.Product.ingredients_german}}</p>-->
+         
+         </div>
+        
+
+
+    </ion-content>
+   
+</ion-view>
+
+<style>
+    .cat_listing_box{
+        background: transparent !important;
+    }
+    .cat_listing_box.single_img{
+        background: transparent !important;
+        height: auto;
+    }
+    .cat_listing_box.single_img img{
+        position: static;
+    }
+    
+    </style>

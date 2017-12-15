@@ -1,0 +1,192 @@
+<ion-modal-view>
+     
+<!--     <div class="bar bar-header item-input-inset" style="background:none; border:none;">
+         <form ng-submit="serch_by_name()" style="position:relative;">
+        <div class="item-input-wrapper" style="background:none; border-bottom:1px solid #ddd; border-radius:0;width: 92%;float: left;">
+        <input class="srch" type="text"  placeholder="Search by Bar Name" ng-model="data.resname" >
+        </div>
+        <button type="text" class="icon placeholder-icon search_icnss"><img src="img/search_loc.png"></button>
+       
+     </form>
+          <button class="icon placeholder-icon close_iconmo" ng-click = "closeModal2()" ><img style="margin-top:10px;" src="img/delete.png"></button>
+</div>
+     
+     
+      
+   
+    <ion-content class="has-header" padding="true" style="background:#fefefe;">-->
+    
+    
+    
+    <ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+<!--    <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+    </div>-->
+    	<h1 class="title" style="line-height: 1; left: 49px; right: 49px;">
+        	<img src="img/logo2.png" style="max-width: 100%;width: 32%;margin-top: 2%;line-height: 33px;height: 33px;" /> 
+      </h1>
+   	<div class="buttons">
+   		<button class="icon placeholder-icon close_icon" ng-click = "closeModal2()" style="position: absolute; top: 0;"><i class="ion-close-circled" style="color: rgb(255, 255, 255); font-size: 18px; opacity: 0.8;"> </i></button>
+        
+ 	</div>
+    
+ </ion-header-bar>
+     
+   <ion-content class="has-header" scroll="true" padding="true" style="background:url({{Dynam_image}}) no-repeat; background-size:100%;">  
+     
+       <div class="padding">
+     	 <form ng-submit="serch_by_name()">
+      
+        <div class="" style="background:none; border-radius:0;width: 100%;float: left; margin-top: 6%;"> 
+        
+        
+<!--        <input class="srch" type="search"  ng-model="data.city"  ng-change="selectedterm(data.city)" placeholder="Enter Your location" g-places-autocomplete options="agutocompleteOptions" details="details" style="float: left; width: 100%; background: transparent none repeat scroll 0% 0%; color: rgb(255, 255, 255);">-->
+        	
+            
+           <div class="group martinput"> 
+             <input class="srch" type="search"  ng-model="data.resname" placeholder="Enter Venue Name" >
+             <span class="highlight"></span>
+      		<span class="bar"></span>
+      		<label>Search</label>
+          </div> 
+        
+      
+       
+        </div>
+        <!--<i class="icon placeholder-icon search_icn" ng-click="search()"><img src="img/search_loc.png"></i>
+        <button class="icon placeholder-icon close_icon" ui-sref="menu.nearestRestaurants"><img style="margin-top:10px;" src="img/delete.png"></button>-->
+       
+
+		
+<button class="button button-block sky_blue" type="submit">
+Search 
+</button>
+
+
+     </form>
+       </div>
+<!--      <button class="icon placeholder-icon close_icon" ng-click = "closeModal2()" style="top:34px;">-->
+<!--        <i class="ion-close-circled" style="color: rgb(255, 255, 255); font-size: 18px; opacity: 0.8; "> </i>
+        </button>-->
+    
+    
+<style>
+    .martinput input{
+        width:100%;
+        padding: 10px 0 0;
+        color:#fff !important;
+        border-radius: 0px !important;
+    }
+  .martinput input  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff !important;
+}
+.martinput input::-moz-placeholder { /* Firefox 19+ */
+  color: #fff !important;
+}
+.martinput input:-ms-input-placeholder { /* IE 10+ */
+  color: #fff !important;
+}
+.martinput input:-moz-placeholder { /* Firefox 18- */
+  color: #fff !important;
+}
+</style>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <!--<div class="padding">
+      
+      <div class="list">
+      <div class="list_outer">
+      <span class="deduct_location"><i class=""><img src="img/detect.png"></i></span>
+		 <span class="detect">DETECT MY LOCATION</span>
+      
+      <a class="search_item" href="#">
+        Berlin Marina
+      </a>
+      <a class="search_item" href="#">
+        Berlin Mall
+      </a>
+      <a class="search_item" href="#">
+        Berlin food festival
+      </a>
+      <a class="search_item" href="#">
+        Berlin Media City Dubai
+      </a>
+      <a class="search_item" href="#">
+        Internet City Berlin
+      </a>
+      <a class="search_item" href="#">
+       Berlin Sports City
+      </a>
+      <a class="search_item" href="#">
+        Berlin Investment Park
+      </a>
+      </div>
+
+</div>
+</div>-->
+    </ion-content>
+  </ion-modal-view>
+  
+
+<style>
+form{width:100%;float:left;}
+.search_icn {
+    position: absolute;
+    right: 45px;
+    top: 39px;
+}
+.close_icon{
+    position: absolute;
+    top: 26px;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #000;
+  opacity: 1 !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+   color: #000;
+   opacity: 1 !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #000;
+    opacity: 1 !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #000;
+    opacity: 1 !important;
+}
+
+.srch ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #000 !important;
+}
+.srch ::-moz-placeholder { /* Firefox 19+ */
+  color: #000 !important;
+} 
+.srch :-ms-input-placeholder { /* IE 10+ */
+  color: #000 !important;
+}
+.srch :-moz-placeholder { /* Firefox 18- */
+  color: #000 !important;
+}
+.button.button-block.sky_blue {
+    float: left;
+    line-height: 39px;
+    margin: 2vh 25% 0;
+    min-height: 16px;
+    width: 50%;
+}
+</style>

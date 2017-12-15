@@ -1,0 +1,104 @@
+<ion-view style="" id="page5" title="Nearest Restaurants"  hide-nav-bar="true">
+
+
+<ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+    <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+       <button style="margin-right:5px; margin-top:3px; margin-left: 15px;" class="button button-clear" ng-click="modal1.show()"><i class="icon""><img width="20px" src="img/bar-pin.png" alt="" /></i></button>
+          <button style="margin-right:5px; margin-top:3px; margin-left: 8px;" class="button button-clear" ng-click="modals.show()"><i class="icon""><img width="20px" src="img/icon2.png" alt="" /></i></button>
+<!--        <button style="margin-top:3px;" class="button button-clear" ng-click="modal2.show()"><i class="icon"><img width="20px" src="img/icon_search.png" alt="" /></i></button>-->
+    </div>
+<!--    	<h1 class="title" style="line-height: 1; left: 94px !important; right: 116px !important;"><span class="top_title">{{formatted_address}}</span></h1>-->
+   	
+    	<h1 class="title logo_sec" style="line-height: 1; left: 49px; right: 49px;">
+        	<img src="img/logo2.png" style="max-width: inherit; line-height: 30px;height: 30px;margin: 11px 0;" /> 
+        </h1>
+
+<div class="buttons">
+   		<button style="margin-right:10px;" class="button button-clear" ui-sref="menu.search"><i class="icon" style="position: relative;top: 5px;right: 4px;"><img width="12px" style="width:20px;"  src="img/icon_search.png" alt="" /></i></button>
+        
+ 	<button class="button button-clear" id="fab" ng-click="map()" ng-controller="mapCtrl">
+            <img src="img/mapicn.png" style="width: 23px;margin: 4px 0;">
+        </button>
+</div>
+    
+ </ion-header-bar>
+<ion-content class="has-header" padding="false">
+        <div class="restaurant_list" ng-repeat="rest_list in resturant_list"reas>
+            <a ng-click="rest_details(rest_list.id,rest_list.latitude,rest_list.longitude)" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="{{rest_list.logo}}" height="auto" width="100%">
+<!--                <div class="restaurant_destination distance01">
+                	<h5><i class=""><img src="img/location.png"></i>{{rest_list.distance}} KM</h5>
+                </div>-->
+                <div class="restaurant_con">
+                	<h1 style="margin: 0 0 11px;">{{rest_list.name}}</h1>
+                        <h5><i class=""><img style="position: inherit;" src="img/location.png"></i>{{rest_list.distance | number : 2}} KM</h5>
+                    <h5 style="margin: 15px 0 0 0;">{{rest_list.address}}</h5>
+<!--                    <span>Happy hour drinks -50%</span>-->
+                </div>
+            </a>
+        </div>
+
+<!--        <div class="restaurant_list" ng-repeat="rest_list in resturant_list" ng-if="currentLanguage == 'Deutsche'">
+            <a ng-click="rest_details(rest_list.id,rest_list.latitude,rest_list.longitude)" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="{{rest_list.logo}}" height="auto" width="100%">
+                <div class="restaurant_destination distance01">
+                    <h5><i class=""><img src="img/location.png"></i>{{rest_list.distance}} KM</h5>
+                </div>
+                <div class="restaurant_con">
+                    <h1 style="margin: 0 0 11px;">{{rest_list.name_german}}</h1>
+                        <h5><i class=""><img style="position: inherit;" src="img/location.png"></i>{{rest_list.distance | number : 2}} KM</h5>
+                    <h5 style="margin: 15px 0 0 0;">{{rest_list.address}}</h5>
+                    <span>Happy hour drinks -50%</span>
+                </div>
+            </a>
+        </div>-->
+        
+<!--        <div class="restaurant_list">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/r2.jpg" height="auto" width="100%">
+                <div class="restaurant_destination">
+                    <h5><i class=""><img src="img/location.png"></i> 100 <br /> METERS</h5>
+                </div>
+                <div class="restaurant_con">
+                   <h1>The Pub</h1>
+                    <h5>Rochstraße 14, 10178 Berlin, Germany,</h5>
+                    <span>Happy hour drinks -50%</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="restaurant_list">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/r3.jpg" height="auto" width="100%">
+                <div class="restaurant_destination">
+                    <h5><i class=""><img src="img/location.png"></i> 100 <br /> METERS</h5>
+                </div>
+                <div class="restaurant_con">
+                  <h1>The Pub</h1>
+                    <h5>Rochstraße 14, 10178 Berlin, Germany,</h5>
+                    <span>Happy hour drinks -50%</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="restaurant_list">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/r4.jpg" height="auto" width="100%">
+                <div class="restaurant_destination">
+                    <h5><i class=""><img src="img/location.png"></i> 100 <br /> METERS</h5>
+                </div>
+                <div class="restaurant_con">
+                  <h1>The Pub</h1>
+                    <h5>Rochstraße 14, 10178 Berlin, Germany,</h5>
+                    <span>Happy hour drinks -50%</span>
+                </div>
+            </a>
+        </div>-->
+       
+        
+    </ion-content>
+<!--     <button class="button button-light button-fab button-fab-bottom-right" id="fab" ng-click="map()" ng-controller="mapCtrl">
+            <i class="icon"><img style="margin-top:10px;" width="18px" src="img/geo_icon.png"></i>
+        </button>-->
+</ion-view>

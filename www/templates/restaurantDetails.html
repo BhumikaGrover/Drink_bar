@@ -1,0 +1,304 @@
+<ion-view style="" id="page7" title="Bar Details" hide-nav-bar="true">
+<!--<ion-header-bar align-title="center" id="div1" class="bar-light map_header">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title">{{rest_detail.name}}</h1>
+  <div class="buttons">
+    <button class="heart_icon" style="padding-top:5px;"><img src="img/heart-active.png" width="20px"></button>
+  </div>
+</ion-header-bar>-->
+
+<ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+    <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+<!--    	<h1 class="title" style="line-height: 1; left: 94px !important; right: 116px !important;"><span class="top_title">{{formatted_address}}</span></h1>-->
+   	
+    	<h1 class="title" style="line-height: 1; left: 49px; right: 49px;">
+        	<img src="img/logo2.png" style="max-width: 100%;line-height: 30px;height: 30px;margin: 11px 0;" /> 
+        </h1>
+
+<div class="buttons">
+   		
+</div>
+    
+ </ion-header-bar>    
+
+
+    <ion-content class="has-header" padding="false" style="" on-scroll="scrollEvent()" delegate-handle="scrollHandle">
+    
+        <div class="top_slider">
+            <ion-slide-box css="mypager" ng-if="gallery_data" on-slide-changed="slideHasChanged($index)">
+              <ion-slide ng-click="gallery(rest_detail.id)" ng-controller="galleryCtrl" ng-repeat="slide_images in gallery_data">
+                <div class="box pic_sld">
+                    <a ><img src="{{slide_images.Gallery.image}}" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                    <h1 style="font-size:28px;">{{rest_detail.name}}</h1>                   
+                    </div>
+<!--                    <div class="restaurant_con" style="text-align:left;" ng-if="currentLanguage == 'Deutsche'">
+                    <h1 style="font-size:28px;">{{rest_detail.name_german}}</h1>                   
+                    </div>-->
+                </div>
+                
+              </ion-slide>
+
+            </ion-slide-box>
+     <ion-slide-box css="mypager" on-slide-changed="slideHasChanged($index)" ng-if="gallery_lenght == 0">
+              <ion-slide >
+                <div class="box pic_sld">
+                    <a ><img src="img/bhumi.jpeg" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                    <h1 style="font-size:28px;">{{rest_detail.name}}</h1>                   
+                    </div>
+<!--                    <div class="restaurant_con" style="text-align:left;" ng-if="currentLanguage == 'Deutsche'">
+                    <h1 style="font-size:28px;">{{rest_detail.name_german}}</h1>                   
+                    </div>-->
+                </div>
+              </ion-slide>
+
+            </ion-slide-box>
+        
+        <ion-list id="restaurantDetails-list2" ng-click="mapdirection()">
+              <span style="float:left; font-size:13px; width:100%; padding-top:10px; padding-left:32px; 'montserratregular'; "><i class="icon" style="position: absolute; left: 5px; top: 9px; display: inline-block;"><img width="25px" src="img/geo_icon.png" alt="" /></i>  {{'Get_Direction'|translate}} </span>
+            <ion-item style="white-space:normal; border:none; font-size:10px; padding: 3px 16px; padding-left: 32px;" id="restaurantDetails-list-item4" class="item-icon-left" >
+                {{rest_detail.address}}</ion-item>
+        </ion-list>
+        
+        
+        <div class="row">
+        <div class="col">
+            <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2"  ng-click="product_list(rest_detail.id)" ><span style="font-size:15px;">{{'Show_available_free_drinks' |translate}}</span></a>
+            </div>
+            <!--<div class="col">
+            <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2" ui-sref="menu.mainMenu" href="#/side-menu21/step">PICK UP</a>
+        </div>-->
+        </div>
+
+        
+        <div class="map_diraction">
+        <a href="#" style="color:#000;">
+            <img src="img/map.jpg" alt="" />
+            <div class="restaurant_destination" ng-click="launchNavigator(rest_detail.latitude,rest_detail.longitude)">
+            
+<!--                     <div class="restaurant_destination" ng-click="launchNavigator(rest_detail.latitude,rest_detail.longitude)">-->
+            <h5 style="color:#000;">
+                <span style="float:left; margin-bottom: 5px; width: 100%; padding-left: 25px; font-size:12px; font-family: 'montserratregular'; ">{{'SHOW_ON_MAP'|translate}}</span>
+                <i class="" style="top: -6px;"><img src="img/detect.png"></i>{{distance | number : 2}} KM</h5>
+                
+                   
+                </div>
+                 </a>
+        </div>
+<!--         <div class="map_diraction">
+        <a href="#" style="color:#000;">
+            <img src="img/map.jpg" alt="" />
+            <div class="restaurant_destination" ng-click="launchNavigator()">
+            
+                    
+            <h5 style="color:#000;"><i class=""><img src="img/detect.png"></i>{{distance}} KM</h5>
+                    <span style="float:right; font-size:12px; font-family: 'montserratregular'; ">SHOW DIRECTIONS</span>
+                   
+                </div>
+                 </a>
+        </div>-->
+        
+        
+        
+        
+       
+     
+        
+        <div class="padding" ng-click="toggleGroup1(group1)"
+                    ng-class="{active: isGroupShown1(group1)}">
+            <div class="collapsed_list">
+            <a href="#" class=""><i class="" ng-class="isGroupShown1(group1) ? 'ion-plus-round' : 'ion-minus-round'"></i>
+            {{'About_the_Venue' | translate}}</a>
+        </div>
+        </div>
+        <div style="border:none;" id="restaurantDetails-list-item-container1" class="item item-body" class="item item-body" class="item-accordion"                  
+                    ng-show="isGroupShown1(group1)">
+            <div style="margin-top:0px;color:#000000;" id="restaurantDetails-markdown3">
+                <p class="collaped_txt" style="margin:0;" ng-if="currentLanguage == 'English'">{{rest_detail.description}}
+</p>
+<p class="collaped_txt" style="margin:0;" ng-if="currentLanguage == 'Deutsche'">{{rest_detail.description_german}}
+</p>
+                    
+                    <div class="cuisin">
+                    <div class="row">
+                        <div class="col" style="padding-left: 0px; padding-right: 0px;" ng-if="currentLanguage == 'English'">
+                        <h4 style="width:100%;float: left;margin: 8px 0px;">{{'CATEGORY'|translate}}</h4>
+                         <p style="width:100%;float: left;" ng-repeat="bar_type in rest_detail.typename">{{bar_type.RestaurantsType.name }}</p>
+                        <div class="full_box44" style="width:100%;float: left;margin-top: 20px;border-top: 1px solid #ddd;padding-top: 20px;">
+                           <h4 style="color: #000;width:auto;float: left;margin:0px;">{{'Opening_Hours'|translate}}</h4><h4 style="color: #000;width:auto;float: right;margin:0px;">{{'Closing'|translate}}</h4><h4 style="color: #000;width:auto;float: right;margin-right:10px !important;margin:0px;">{{'Opening'|translate}}</h4>
+                        </div>
+                        </div>
+                        <div class="col" style="padding-left: 0px; padding-right: 0px;" ng-if="currentLanguage == 'Deutsche'">
+                        <h4 style="width:100%;float: left;margin: 8px 0px;">{{'CATEGORY'|translate}}</h4>
+                         <p style="width:100%;float: left;" ng-repeat="bar_type in rest_detail.typename">{{bar_type.RestaurantsType.name_german }}</p>
+                        <div class="full_box44" style="width:100%;float: left;margin-top: 20px;border-top: 1px solid #ddd;padding-top: 20px;">
+                           <h4 style="color: #000;width:auto;float: left;margin:0px;">{{'Opening_Hours'|translate}}</h4><h4 style="color: #000;width:auto;float: right;margin:0px;">{{'Closing'|translate}}</h4><h4 style="color: #000;width:auto;float: right;margin-right:10px !important;margin:0px;">{{'Opening'|translate}}</h4>
+                        </div>
+                        </div>
+<!--                        <div class="col">
+                        <P>PRICE:</P>
+                        <h4>$$$<span>$$</span></h4>
+                        </div>-->
+                    </div>
+                    </div>
+            </div>
+        
+        <div class="list">
+            <div class="opning_hours">
+                
+                <div class="day" >
+                <div class="boxes01">
+                <div class="dayleft">
+                    <h4>{{'SUNDAY'|translate}}</h4>
+                </div>
+                </div>
+                <div class="boxes01_a" >
+                <div class="time_right">
+<!--                    <h5 class="lft11">Open - Close</h5> -->
+                    <h5 class="rgt11" ng-if="rest_detail.sun_isclose  == 0">{{rest_detail.sun_open}} - {{rest_detail.sun_close}}</h5>
+                     <h5 class="rgt11" ng-if="rest_detail.sun_isclose  == 1">{{'Closed'|translate}}</h5>
+                </div>
+                </div>
+                 
+                </div>    
+                
+                 <div class="day">
+                <div class="boxes01">
+                <div class="dayleft">
+                    <h4>{{'MONDAY'|translate}}</h4>
+                </div>
+                </div>
+                <div class="boxes01_a" >
+                <div class="time_right" >
+<!--                    <h5 class="lft11">Open - Close</h5> -->
+                    <h5 class="rgt11" ng-if="rest_detail.mon_isclose==0">{{rest_detail.mon_open}} - {{rest_detail.mon_close}}</h5>
+                      <h5 class="rgt11" ng-if="rest_detail.mon_isclose==1">{{'Closed'|translate}}</h5>
+                </div>
+                </div>
+                  
+                </div>
+                
+                
+                 <div class="day">
+                <div class="boxes01">
+                <div class="dayleft">
+                    <h4>{{'TUESDAY'|translate}}</h4>
+                </div>
+                </div>
+                <div class="boxes01_a" >
+                <div class="time_right">
+<!--                    <h5 class="lft11">Open - Close</h5> -->
+                    <h5 class="rgt11" ng-if="rest_detail.tue_isclose==0">{{rest_detail.tue_open}} - {{rest_detail.tue_close}}</h5>
+                     <h5 class="rgt11" ng-if="rest_detail.tue_isclose==1">{{'Closed'|translate}}</h5>
+                </div>
+                </div>
+                 </div>
+                
+                
+                
+                
+                
+                 <div class="day">     
+                <div class="boxes01">
+                <div class="dayleft">
+                    <h4>{{'WEDNESDAY'|translate}}</h4>
+                </div>
+                </div>
+                <div class="boxes01_a">
+                <div class="time_right">
+<!--                    <h5 class="lft11">Open - Close</h5> -->
+                    <h5 class="rgt11" ng-if="rest_detail.wed_isclose== 0">{{rest_detail.wed_open}} - {{rest_detail.wed_close}}</h5>
+                     <h5 class="rgt11" ng-if="rest_detail.wed_isclose== 1">{{'Closed'|translate}}</h5>
+                </div>
+                </div>
+                 </div>
+                
+                
+                 <div class="day">
+                <div class="boxes01">
+                <div class="dayleft">
+                    <h4>{{'THURSDAY'|translate}}</h4>
+                </div>
+                </div>
+                <div class="boxes01_a">
+                <div class="time_right">
+<!--                    <h5 class="lft11">Open - Close</h5> -->
+                    <h5 class="rgt11" ng-if="rest_detail.thu_isclose== 0">{{rest_detail.thu_open}} - {{rest_detail.thu_close}}</h5>
+                     <h5 class="rgt11" ng-if="rest_detail.thu_isclose== 1">{{'Closed'|translate}}</h5>
+                </div>
+                </div>
+                 </div>
+                
+                
+                 <div class="day">     
+                <div class="boxes01">
+                <div class="dayleft">
+                    <h4>{{'FRIDAY'|translate}}</h4>
+                </div>
+                </div>
+                <div class="boxes01_a">
+                <div class="time_right">
+<!--                    <h5 class="lft11">Open - Close</h5> -->
+                    <h5 class="rgt11" ng-if="rest_detail.fri_isclose== 0">{{rest_detail.fri_open}} - {{rest_detail.fri_close}}</h5>
+                     <h5 class="rgt11" ng-if="rest_detail.fri_isclose== 1">{{'Closed'|translate}}</h5>
+                </div>
+                </div>
+                 </div>
+                
+                
+                 <div class="day">     
+                <div class="boxes01">
+                <div class="dayleft">
+                    <h4>{{'SATURDAY'|translate}}</h4>
+                </div>
+                </div>
+                <div class="boxes01_a">
+                <div class="time_right">
+<!--                    <h5 class="lft11">Open - Close</h5> -->
+                    <h5 class="rgt11" ng-if="rest_detail.sat_isclose== 0">{{rest_detail.sat_open}} - {{rest_detail.sat_close}}</h5>
+                    <h5 class="rgt11" ng-if="rest_detail.sat_isclose== 1">{{'Closed'|translate}}</h5>
+                </div>
+                </div>
+                 </div>     
+                     
+            </div>
+        </div>
+            
+            
+        </div>
+        </div>
+
+        <div class="padding" ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+            <div class="collapsed_list">
+            <a href="#" class=""><i class="" ng-class="isGroupShown(group) ? 'ion-plus-round' : 'ion-minus-round'"></i> {{'ADDRESS'|translate}}</a>
+         </div></div>
+        <div class="contacts" style="margin-bottom: 35px;" class="item item-body" class="item-accordion"                  
+                    ng-show="isGroupShown(group)">
+        <div class="padding" style="width:100%; float: left;" ng-if="currentLanguage == 'English'">
+                <p>{{rest_detail.name}}</p>
+                <p ng-click="mapdirection()">{{rest_detail.address}}</p>
+              </div>
+            <div class="padding" style="width:100%; float: left;" ng-if="currentLanguage == 'Deutsche'">
+                <p>{{rest_detail.name_german}}</p>
+                <p ng-click="mapdirection()">{{rest_detail.address}}</p>
+              </div>
+             <div style="width: 100%;float: left; ">
+                 <span style="width:100%; float: left;" ng-if="rest_detail.website !='' "> <span style="float: left; font-size: 12px; font-family: 'montserratregular'; text-transform: capitalize; padding-left: 15px; line-height: 21px; margin-right: 5px;">{{'Website'|translate}}:</span><a style="font-size:12px;" ng-click="openBrowser(rest_detail.website)" > {{rest_detail.website}}</a></span>
+                 <span style="width:100%; float: left;" ng-if="rest_detail.facebook != '' "> <span style="float: left; font-size: 12px; font-family: 'montserratregular'; text-transform: capitalize; padding-left: 15px; line-height: 21px; margin-right: 5px;">{{'Facebook'|translate}}:</span><a  style="font-size:12px;" ng-click="openBrowser(rest_detail.facebook)" > {{rest_detail.facebook}}</a></span>
+                 <span style="width:100%; float: left;" ng-if="rest_detail.phone != ''"><span style="float: left; font-size: 12px; font-family: 'montserratregular'; text-transform: capitalize; padding-left: 15px; line-height: 21px; margin-right: 5px;">{{'Phone'|translate}}:</span> <a   style="font-size:12px;" ng-href="tel:{{rest_detail.phone}}"> {{rest_detail.phone}} </a></span>
+             </div>
+            
+        </div>
+             
+        
+        
+        
+    </ion-content>
+
+</ion-view>

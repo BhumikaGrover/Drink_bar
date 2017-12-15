@@ -1,0 +1,97 @@
+<ion-side-menus style="" enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu21">
+        <ion-content padding="false" class="side-menu-left" ngController="menuCtrl">
+        
+        <div class="profile_user" style="background:url(img/n3.jpg) no-repeat; background-size:cover; padding-left: 1px;" ui-sref="menu.profile">
+		<div class="pro_pic1">
+            	<a menu-close ui-sref="menu.profile"><img src="{{profilepic}}"></a>
+            </div>
+            <div menu-close class="profile_list" style="height:150px; background:none;" ui-sref="menu.profile">
+              <h2>{{User_data.name}}</h2>
+              
+              <a href="#">{{'View_Account' | translate}}</a>
+            </div>
+        
+        <button menu-close  class="button-clear sett_btn"><img src="img/settings.png"></button>
+        </div>
+        
+        
+        
+            <ion-list id="menu-list1">
+           <ion-item style="border:none;font-size: 12px;" menu-close="" ui-sref="menu.location" id="menu-list-item1" class="item-icon-left slide_nav" > {{'Search_Venues'| translate}} 
+                    <i class="icon_new fa fa-search"></i>
+                </ion-item>
+                <ion-item style="border:none;font-size: 12px;padding-left:50px;" menu-close=""  ng-click="home_page()" id="menu-list-item1" class="item-icon-left slide_nav" ngController="nearestRestaurantsCtrl" ng-if="state!='menu.location'">{{'Venues_List' |translate}}
+                    <i class="icon_new fa fa-map-pin"></i>
+                </ion-item>
+<!--                <ion-item style="border:none;font-size: 12px;padding-left: 44px;" menu-close="" ui-sref="menu.notification" id="menu-list-item3" class="item-icon-left slide_nav">Notification
+                    <i class="icon_new fa fa-beer"></i>  
+                </ion-item>-->
+               
+            <ion-item style="border:none;font-size: 12px;padding-left: 44px;" menu-close="" ng-click="history()" ng-controller="historyCtrl"  id="menu-list-item3" class="item-icon-left slide_nav">{{'Drink_History'| translate}}
+                    <i class="icon_new fa fa-beer"></i>                   
+
+                </ion-item>
+            
+                
+                 <ion-item style="border:none;font-size: 12px;padding-left: 50px;" menu-close=""  ng-click="plans_list()" ng-controller="favoritesCtrl" id="menu-list-item1" class="item-icon-left slide_nav">{{'Plan_Billing'| translate}}
+                    <i class="icon_new fa fa-credit-card"></i>
+                </ion-item>
+              
+                <ion-item style="border:none;font-size: 12px;padding-left: 50px;" menu-close="" ng-click="earn_free()"  ng-controller="discoverCtrl"  id="menu-list-item1" class="item-icon-left slide_nav">{{'Earn_FREE_Months'| translate}}
+                    <i class="icon_new fa fa-calendar-check-o"></i>
+                </ion-item>
+            <ion-item style="border:none;font-size: 12px;" menu-close="" ui-sref="menu.contact" id="menu-list-item1" class="item-icon-left slide_nav contact_height">{{'Contact_Us'| translate}}
+                    <i class="icon_new ion-android-call"></i>
+            </ion-item>
+<!--            <ion-item style="border:none;font-size: 12px;" menu-close="" ui-sref="menu.FAQ({idd:lists.Staticpage.id})"  id="menu-list-item1" class="item-icon-left slide_nav" ng-repeat="lists in list">{{lists.Staticpage.title}}
+                 <i class="icon_new fa fa-file-o"></i>
+            </ion-item>-->
+                  <ion-item style="border:none;font-size: 12px;" menu-close="" ng-if="currentLanguage == 'English'" ng-click="faq(lists.Staticpage.id)" ng-controller="FAQCtrl" id="menu-list-item1" class="item-icon-left slide_nav" ng-repeat="lists in list">{{lists.Staticpage.title}}
+                 <i class="icon_new fa fa-file-o"></i>
+            </ion-item>
+<ion-item style="border:none;font-size: 12px;" menu-close="" ng-if="currentLanguage == 'Deutsche'" ng-click="faq(lists.Staticpage.id)" ng-controller="FAQCtrl" id="menu-list-item1" class="item-icon-left slide_nav" ng-repeat="lists in list">{{lists.Staticpage.title_german}}
+                 <i class="icon_new fa fa-file-o"></i>
+            </ion-item>
+<!--                <ion-item style="border:none;font-size: 12px;padding-left:50px;" menu-close="" ng-click="terms()" ng-controller="termsCtrl" id="menu-list-item1" class="item-icon-left slide_nav">Terms & Conditions
+                    <i class="icon_new fa fa-calendar-check-o"></i>
+                </ion-item>-->
+
+ 
+<!--<ion-item style="border:none;font-size: 12px;" menu-close="" ng-click="privacy()" ng-controller="privacyCtrl" id="menu-list-item1" class="item-icon-left slide_nav contact_height">Privacy Policy
+                    <i class="icon_new ion-lock-combination"></i>
+                </ion-item>
+                -->
+                  <!-- <ion-item style="border:none;font-size: 12px;padding-left: 44px;" menu-close="" ui-sref="menu.confirmation" id="menu-list-item1" class="item-icon-left slide_nav">payment confimation
+                    <i class="icon_new fa fa-calendar-check-o"></i>
+                </ion-item>
+                
+-->
+<!--   <ion-item style="border:none;font-size: 12px;" menu-close="" ui-sref="menu.editfacebook" id="menu-list-item1" class="item-icon-left slide_nav" >payment confimation
+                    <i class="icon_new fa fa-calendar-check-o"></i>
+                </ion-item> -->
+                
+                
+                
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
+
+<style>
+    .item-complex.item-icon-left .item-content{
+        padding-left: 0px;
+    }
+    .item-complex .item-content, .item-radio .item-content{
+        height:100%;
+    }
+    </style>

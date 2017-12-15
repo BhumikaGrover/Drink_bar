@@ -1,0 +1,202 @@
+<ion-view id="page2" title="Signup" hide-nav-bar="true">
+<ion-content padding="true" style="background: url({{Dynam_image}}) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding" >
+        <div style="width: 100%; height: 5vh;" class="spacer"></div>
+
+<center><img src="img/logo2.png" style="width: 60%;" /></center>
+            <div style="width: 100%; height:1vh;" class="spacer"></div>
+        <h3 style="text-align:center; color:#fff; margin:0;">{{'Sign_Up' | translate}}</h3>
+         <div style="width: 100%; height:1vh;" class="spacer"></div>
+         <form class="list border_none" id="signup-form3" name="Signup" ng-submit="Signup.$valid && signupp()" novalidate>
+        <div class="list">
+            <div class="form_sinn">
+       
+
+  
+
+
+
+            <label id="signup-input4" class="item item-input item-floating-label signup_inpt">
+<!--                <span class="input-label">First Name</span>-->
+                <input placeholder="{{'First_Name'| translate}}" type="text" name="fullname" ng-model="data.fullname" required="">
+            </label>
+            <div ng-show="Signup.$submitted || Signup.fullname.$touched">
+            <div ng-show="Signup.fullname.$error.required" class="help-inline">{{'Field_Required' | translate}}</div>
+            </div>
+              <label id="signup-input4" class="item item-input item-floating-label signup_inpt">
+<!--                <span class="input-label">Last Name</span>-->
+                <input placeholder="{{'Last_Name' | translate}}" type="text" name="Lastname" ng-model="data.Lastname" required="">
+            </label>
+            <div ng-show="Signup.$submitted || Signup.Lastname.$touched">
+            <div ng-show="Signup.Lastname.$error.required" class="help-inline">{{'Field_Required' | translate}}</div>
+            </div>
+                  
+                <div>
+  
+    <div class="input-label" style="font-size: 13px;font-weight: 900;     padding: 7px 0 0 16px;">
+      {{'Gender'| translate}}
+    </div>
+   <label class="item item-input item-select" style="background: none;border-left: 0;border-radius: 0;border-right: 0;     height: 42px;     padding: 0;"> 
+      <select ng-model="data.gender" name="gender" style="color: rgb(255, 255, 255);  padding: 6px 14px;   background: none;
+    left: 0; direction: ltr;" required="">
+        <option>Select Gender</option>
+        <option value="male">{{'Male'| translate}}</option>
+        <option value="female">{{'Female'| translate}}</option>
+        <option value="female">{{'Other'| translate}}</option>
+        
+
+    </select>
+  </label>
+                <div ng-show="Signup.$submitted || Signup.country.$touched">
+           <div ng-show="Signup.gender.$error.required" class="help-inline">{{'Field_Required' | translate}}</div>
+           </div>
+ </div> 
+            
+<!--            <div ng-show="Signup.$submitted || Signup.phone.$touched">
+             <div ng-show="Signup.phone.$error.required" class="help-inline">Field required</div>
+             <div ng-show="Signup.phone.$error.number" class="help-inline">Enter Digits</div>
+            </div>-->
+      <div style="width: 100%; float: left;">
+<!--           <ion-label floating style="width: 100%; max-width: 100%; float: left; color: rgb(255, 255, 255); font-size: 15px; padding-left: 16px;">Birthday</ion-label>-->
+<!--            <input type="date" name="dob" ng-model="data.dob"   required="" class="datefloat" style="border-radius:0px; height: 45px; padding: 15px;">
+            <div ng-show="Signup.$submitted || Signup.dob.$touched">
+            <div ng-show="Signup.dob.$error.required" class="help-inline">Field required</div>
+        </div>-->
+<!-----------------------birthday-------------------->
+
+            <ion-label floating style="width: 100%; max-width: 100%; float: left; color: rgb(255, 255, 255); font-size: 13px; padding-left: 16px;">{{'Birthday'| translate}}</ion-label>
+            <input type="date" name="dob" ng-model="data.dob"   required="" class="datefloat">
+            <div ng-show="Signup.$submitted || Signup.dob.$touched">
+            <div ng-show="Signup.dob.$error.required" class="help-inline">{{'Field_Required' | translate}}</div>
+        </div>
+<!------------------------------------------------------------>
+
+<!-- <label id="signup-input4" class="item item-input item-floating-label signup_inpt">
+                <span class="input-label">City</span>
+                <input placeholder="{{'City'| translate}}" type="text" name="City" ng-model="data.City" required="" style="">
+            </label>-->
+ <label id="signup-input4" class="item item-input item-floating-label signup_inpt">
+<!--                <span class="input-label">First Name</span>-->
+                <input placeholder="{{'City'| translate}}" type="text" name="City" ng-model="data.City" required="">
+            </label>
+            <div ng-show="Signup.$submitted || Signup.City.$touched">
+            <div ng-show="Signup.City.$error.required" class="help-inline">{{'Field_Required' | translate}}</div>
+            </div>
+            
+            <div class="list" style="margin-bottom:0px !important;">
+
+  
+    <div class="input-label" style="font-size: 13px;font-weight: 900;     padding: 7px 0 0 16px;">
+     {{'Country' | translate}}
+    </div>
+
+    <label class="item item-input item-select" style="background: none;border-left: 0;border-radius: 0;border-right: 0;     height: 42px;     padding: 0;"> 
+    <select style="color: rgb(255, 255, 255);  padding: 6px 14px;   background: none;
+    left: 0; direction: ltr;" ng-model="data.country" name="country" required>
+        
+        <option ng-repeat="list in countrylist" value="{{list.Country.name}}" >{{list.Country.name}}</option>
+<!--      <option selected>Green</option>
+      <option>Red</option>-->
+    </select>
+  </label>
+  <div ng-show="Signup.$submitted || Signup.country.$touched">
+           <div ng-show="Signup.country.$error.required" class="help-inline">{{'Field_Required' | translate}}</div>
+           </div>
+
+</div>
+<!--            <div class="row" style="border-bottom: 1px solid rgba(255,255,255,0.3) !important; padding-bottom: 16px;padding-top: 14px;"> 
+                <div class="col col-25" style="color: #fff;"> Gender </div>
+                <div class="col">
+                     <input type="radio" name="a" ng-model="data.gender" value="male"> <label style="color: #fff;font-size: 14px;border-bottom: none !important;margin-right:5px;"> Male </label>
+                    <input type="radio" name="a" ng-model="data.gender" value="female"><label style="color: #fff;font-size: 14px;border-bottom: none !important;margin-right:5px;"> Female</label>
+                    <input type="radio" name="a" ng-model="data.gender" value="other"><label style="color: #fff;font-size: 14px;border-bottom: none !important;"> Other</label>
+               </div>
+            </div>-->
+            
+       
+               
+      
+            
+          
+            
+   
+       
+            
+
+<!--<label id="signup-input8" class="item item-input item-floating-label">
+                <span style=" color: #fff;  font-size: 12px;  position: absolute;  top: 37%;">DOB (YYYY-mm-dd)</span>
+                <input type="date" name="dob" ng-model="data.dob"   required="" >
+            </label>
+           <div ng-show="Signup.$submitted || Signup.dob.$touched">
+            <div ng-show="Signup.dob.$error.required" class="help-inline">Field required</div>-->
+
+
+<!--             <div ng-show="Signup.dob.$error.min" class="help-inline">Must be at least 18 years of age</div>-->
+            </div>
+<label id="signup-input6" class="item item-input item-floating-label signup_inpt">
+<!--                <span class="input-label">Phone Number</span>-->
+                <input placeholder="{{'Phone_Number_Optional' | translate}}" type="number" name="phone" ng-model="data.phone" >
+            </label>
+           
+<label id="signup-input5" class="item item-input item-floating-label signup_inpt">
+<!--                <span class="input-label">Email </span>-->
+                <input placeholder="{{'Email_Address'| translate}}" type="email" name="email" ng-model="data.email" required="">
+            </label>
+           <div ng-show="Signup.$submitted || Signup.email.$touched">
+           <div ng-show="Signup.email.$error.required" class="help-inline">{{'Field_Required' | translate}}</div>
+           </div>
+           <span ng-show="!Signup.email.$error.required && Signup.email.$error.email && Signup.email.$dirty" class="help-inline">{{'Invalid_Email_Address'| translate}}</span>
+            <label id="signup-input7" class="item item-input item-floating-label signup_inpt">
+<!--                <span class="input-label">Password</span>-->
+                <input placeholder="{{'Password'| translate}}" type="password" name="password" ng-model="data.password" required="">
+            </label>
+            <div ng-show="Signup.$submitted || Signup.password.$touched">
+            <div ng-show="Signup.password.$error.required" class="help-inline">{{'Field_Required' | translate}}</div>    
+            </div>
+            <label id="signup-input8" class="item item-input item-floating-label signup_inpt">
+<!--                <span class="input-label">Confirm Password</span>-->
+                <input placeholder="{{'Confirm_Password'| translate}}" type="password" name="cpassword" ng-model="data.cpassword" required="">
+            </label>
+            <div ng-show="Signup.$submitted || Signup.cpassword.$touched">
+            <div ng-show="Signup.cpassword.$error.required" class="help-inline">{{'Field_Required' | translate}}</div>
+            </div>
+            </div>
+            <button class="button sky_blue  button-block" style="border-radius:0px 0px 0px 0px;" id="signup-button2" >{{'SIGN_UP' | translate}}</button>
+        </div>
+       
+         </form>
+        <div style="width: 100%; height:2vh;" class="spacer"></div>
+        <center> <a ng-click="facebookSignIn()" ng-controller="sliderCtrl">
+            <img src="img/facebook image.png" width-="500px" height="50px">
+        </a>
+            </center>
+            <button ui-sref="menu.login" class="button button-light  button-block button-clear button_txt1" id="createProfile-button3">{{'Already_have_an_account'| translate}} <span style="color:#29e6f2;">{{'Sign_In'| translate}}</span></button>
+            
+            <button ui-sref="menu.forgotPassword" class="button button-light  button-block button-clear button_txt1" id="createProfile-button3" >{{'Forgot_Password'| translate}}</button>
+        <div style="width: 100%; height:8vh; float: left;" class="spacer"></div>
+         
+<!--        <div class="row">
+            <div class="col col-50">
+        <ion-radio class="crd_list" name="a" ng-model="choice" style=" width:100%; float:left;"  ng-click="setLang('Deutsche')">
+       <div class="left_align">
+              <span style="width: 17px;">Deutsche</span> 
+                                            
+       </div>
+        </ion-radio>
+            </div>
+            <div class="col col-50">
+           <ion-radio class="crd_list" name="a" ng-model="choice" style=" width:100%; float:left;"  ng-click="setLang('English')">
+                   <div class="left_align">
+                          <span style="width: 26px;">English</span>
+                    </div>
+            </ion-radio>
+            </div>
+        </div>-->
+   
+    </ion-content>
+</ion-view>
+<style>
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+    color: #fff;
+    opacity: 1 !important;
+}
+</style>

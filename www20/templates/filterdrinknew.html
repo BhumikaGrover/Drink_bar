@@ -1,0 +1,59 @@
+<ion-modal-view>
+     <div class="bar bar-header item-input-inset" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+  <button class="button button-clear icon ion-ios-arrow-back white" ng-click = "closeModald()"></button>
+      <h1 class="title" style="color:#fff;">Filter</h1>
+   
+</div>
+    
+    <ion-pane>
+        <form ng-submit="drink_filter_list()" >
+    <ion-content overflow-scroll="true"  class="has-header has-footer" padding="true"  style="background:url({{Dynam_image}}); background-size:100%; ">
+      <div class="form_sinn"><ul class="list">
+
+          <li class="item item-toggle" style="border-color: rgba(221, 221, 221, 0.29);    background-color: rgba(255, 255, 255, 0.17);  color: #fff;">
+     {{'Drinks_Filter'|translate}}
+<!--     <label class="toggle toggle-positive">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>-->
+              </li>
+
+
+
+          </ul></div>
+      <div class="form_inner">
+     
+       <ion-list class="lightbg">
+          <ion-checkbox class="filter_item item-icon-left" ng-model="data.drinkcat[filterdrink.Drink.name]" ng-repeat=" filterdrink in filterdata"><i class="iconleft fa fa-glass" ng-if="currentLanguage == 'English'">{{filterdrink.Drink.name}}</i>
+          <i class="iconleft fa fa-glass" ng-if="currentLanguage == 'Deutsche'">{{filterdrink.Drink.name_german}}</i></ion-checkbox>
+<!--          <ion-checkbox class="filter_item" ng-model="filter.B"><i class="iconleft fa fa-beer"></i>Smirnoff</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.C"><i class="iconleft fa fa-glass"></i>Leffe Blond</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.D"><i class="iconleft fa fa-beer"></i>Bourbon</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.E"><i class="iconleft fa fa-glass"></i>Arta Tequila</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.F"><i class="iconleft fa fa-beer"></i>Bacardi </ion-checkbox>-->
+        
+        </ion-list>
+      </div>
+     <div class="spacer" style="width:100%; float:left; height:16vh;" > </div>
+     
+      
+    </ion-content>
+    
+         <div class="bar bar-footer pdng01">
+               <button class="button button-block sky_blue" style="float: left;line-height: 39px;margin: 0;min-height: 16px;width: 100%;" type="submit">
+           {{'Apply_Drinks_Filter' | translate}}
+                </button>
+         </div>
+         
+</form>
+</ion-pane>
+
+  </ion-modal-view>
+<style>
+ .fa-glass:before{
+margin-right: 5px;
+ }   
+    
+</style>

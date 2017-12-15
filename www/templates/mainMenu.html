@@ -1,0 +1,97 @@
+<ion-view title="Menu" id="" hide-nav-bar="true">
+
+<ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+   
+  </div>
+    <h1 class="title" style="left: 42px;right: 42px;line-height: 42px;height: 42px;">
+        <img src="img/logo2.png" style="max-width: 100%;line-height: 30px;height: 30px;margin: 11px 0;" /> 
+    </h1>
+
+ 
+ <button style="margin-right:5px; margin-top: 4px;" class="button button-clear" ng-click="modal5.show()"><i class="icon"><img width="20px" src="img/icon2.png" alt="" /></i></button>
+
+</ion-header-bar>
+        <div class="bar bar-subheader" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+        <h2 class="title" style="color: #fff;">{{'Available_Free_Drinks' |translate}}</h2>
+</div>
+
+
+    <ion-content class="has-header has-subheader" padding="false" style="background: #fff; ">
+		
+        <div class="cate_listing"  ng-if="currentLanguage == 'English'">
+        	<div class="cat_listing_box" ng-repeat="prodetails in prod_list | filter:category"  ng-click="single_prodetail(prodetails.Product.id)">
+            	<img src="{{prodetails.Product.image}}" alt="" />
+              <a  class="winename" ng-if="currentLanguage == 'English'">{{prodetails.Product.name}}</a>
+              <a  class="winename" ng-if="currentLanguage == 'Deutsche'">{{prodetails.Product.name_german}}</a>
+<!--              <p class="winedesp"> $ {{prodetails.Product.price}}</p>-->
+<!--                <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px; background-color:#29e6f2; width:30%; height:12px; line-height:12px; min-height:33px; color:#000; right:-196px; font-size:13px; color:#fff;" id="createProfile-button2"><span style="font-size:13px; color:#fff; line-height:20px;">I m Ready</span></a>-->
+            </div>
+         <!-- confirmation  -->
+<!--            <div class="cat_listing_box">
+            	<img src="img/w2.jpg" alt="" />
+                <a ui-sref="menu.menuFood" class="winename">Smirnoff</a>
+                  <p class="winedesp"> Smirnoff is produced one of the biggest alcohol companies in the world.</p>
+              <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px; background-color:#29e6f2; width:30%; height:12px; line-height:12px; min-height:33px; color:#000; right:-196px;font-size:13px; color:#fff;" id="createProfile-button2" ui-sref="menu.mainMenu2" href="#/side-menu21/step"><span style="font-size:13px; color:#fff; line-height:20px;">I m Ready</span></a>
+            </div>
+            
+            <div class="cat_listing_box">
+            	<img src="img/w3.jpg" alt="" />
+                <a ui-sref="menu.menuFood" class="winename">Leffe Blond</a>
+                 <p class="winedesp"> The light Belgian beer gets its sunny hue from pale malt. </p>
+              
+                  <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px; background-color:#29e6f2; width:30%; height:12px; line-height:12px; min-height:33px; color:#000; right:-196px;font-size:13px; color:#fff;" id="createProfile-button2" ui-sref="menu.mainMenu2" href="#/side-menu21/step"><span style="font-size:13px; color:#fff; line-height:20px;">I m Ready</span></a>
+            </div>
+            
+            <div class="cat_listing_box">
+            	<img src="img/w4.jpg" alt="" />
+                <a ui-sref="menu.menuFood" class="winename">Bourbon</a>
+                 <p class="winedesp">  American whiskey: a barrel-aged distilled spirit made primarily from corn</p>
+              
+                   <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px; background-color:#29e6f2; width:30%; height:12px; line-height:12px; min-height:33px; color:#000; right:-196px;font-size:13px; color:#fff;" id="createProfile-button2" ui-sref="menu.mainMenu2" href="#/side-menu21/step"><span style="font-size:13px; color:#fff; line-height:20px;">I m Ready</span></a>
+            </div>
+            
+            <div class="cat_listing_box">
+            	<img src="img/w5.jpg" alt="" />
+                <a ui-sref="menu.menuFood" class="winename">Arta Tequila</a>
+                 <p class="winedesp"> Arta Tequila is Colorado's Tequila, one of the Best premium Tequila Brands available.</p>
+              
+                 <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px; background-color:#29e6f2; width:30%; height:12px; line-height:12px; min-height:33px; color:#000; right:-196px;font-size:13px; color:#fff;" id="createProfile-button2" ui-sref="menu.mainMenu2" href="#/side-menu21/step"><span style="font-size:13px; color:#fff; line-height:20px;">I m Ready</span></a>
+            </div>
+            
+            <div class="cat_listing_box">
+            	<img src="img/w6.jpg" alt="" />
+                <a ui-sref="menu.menuFood" class="winename">Bacardi </a>
+                 <p class="winedesp"> Bacardi's transition into an international brand was due mostly to Schueg's "business genius".</p>
+              
+                   <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px; background-color:#29e6f2; width:30%; height:12px; line-height:12px; min-height:33px; color:#000; right:-196px; font-size:13px; color:#fff;" id="createProfile-button2" ui-sref="menu.mainMenu2" href="#/side-menu21/step"><span style="font-size:13px; color:#fff; line-height:20px; ">I m Ready</span></a>
+            </div>-->
+        </div>
+        <div class="cate_listing" ng-if="currentLanguage == 'Deutsche'">
+          <div class="cat_listing_box" ng-repeat="prodetails in prod_list | filter:category"  ng-click="single_prodetail(prodetails.Product.id)">
+              <img src="{{prodetails.Product.image}}" alt="" />
+              <a  class="winename">{{prodetails.Product.name_german}}</a>
+
+            </div>
+        
+        </div>
+        
+        
+        
+        <!--<div class="listmenure">
+        	<a ui-sref="menu.nearestRestaurants"> <span class="menu_ic"><i class="icon ion-ios-wineglass-outline"></i></span> Wine</a>
+            <a ui-sref="menu.nearestRestaurants"> <span class="menu_ic"><i class="icon"><img width="17px" src="img/vodka.png" /></i></span> Vodka</a>
+            <a ui-sref="menu.nearestRestaurants"> <span class="menu_ic"><i style="font-size:40px;" class="icon ion-beer"></i></span> Beer</a>
+            <a ui-sref="menu.nearestRestaurants"> <span class="menu_ic"><i class="icon"><img width="22px" src="img/Whisky.png" /></i></span> Whisky</a>
+            <a ui-sref="menu.nearestRestaurants"> <span class="menu_ic"><i style="font-size:40px;" class="icon ion-android-bar"></i></span>Tequila</a>
+            <a ui-sref="menu.nearestRestaurants"> <span class="menu_ic"><i class="icon"><img width="30px" src="img/rum.png" /></i></span> Rum</a>
+        </div>-->
+        
+        
+        
+        
+
+
+    </ion-content>
+</ion-view>

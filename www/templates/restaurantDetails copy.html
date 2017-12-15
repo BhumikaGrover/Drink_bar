@@ -1,0 +1,149 @@
+<ion-view style="" id="page7" title="Bar Details" hide-nav-bar="true">
+<ion-header-bar align-title="center" id="div1" class="bar-light map_header">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title">{{rest_detail.name}}</h1>
+  <!--<div class="buttons">
+    <button class="heart_icon" style="padding-top:5px;"><img src="img/heart-active.png" width="20px"></button>
+  </div>-->
+</ion-header-bar>
+    <ion-content class="has-header has-footer" padding="false" style="top:0;" on-scroll="scrollEvent()" delegate-handle="scrollHandle">
+    
+        <div class="top_slider">
+            <ion-slide-box css="mypager" on-slide-changed="slideHasChanged($index)">
+              <ion-slide ng-click="gallery(rest_detail.id)" ng-controller="galleryCtrl" ng-repeat="slide_images in image">
+                <div class="box pic_sld">
+                    <a ><img src="{{slide_images}}" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                    <h1 style="font-size:28px;">{{rest_detail.name}}</h1>                   
+                    </div>
+                </div>
+              </ion-slide>
+
+            </ion-slide-box>
+    
+        
+        <ion-list id="restaurantDetails-list2">
+            <ion-item style="white-space:normal; border:none; font-size:10px;" id="restaurantDetails-list-item4" class="item-icon-left">
+                <i class="icon"><img width="25px" src="img/geo_icon.png" alt="" /></i>{{rest_detail.address}}</ion-item>
+        </ion-list>
+        
+        
+        <div class="row">
+        <div class="col">
+            <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2"  ng-click="product_list(rest_detail.id)" ><span style="font-size:24px;">Free Drinks</span></a>
+            </div>
+            <!--<div class="col">
+            <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2" ui-sref="menu.mainMenu" href="#/side-menu21/step">PICK UP</a>
+        </div>-->
+        </div>
+
+        
+        <div class="map_diraction">
+        <a href="#" style="color:#000;">
+            <img src="img/map.jpg" alt="" />
+            <div class="restaurant_destination" ng-click="launchNavigator()">
+            
+                    
+            <h5 style="color:#000;"><i class=""><img src="img/detect.png"></i>{{distance}} M</h5>
+                    <span style="float:right; font-size:12px; font-family: 'montserratregular'; ">SHOW DIRECTIONS</span>
+                   
+                </div>
+                 </a>
+        </div>
+        
+        
+        
+        
+        
+       
+     
+        
+        <div class="padding">
+            <div class="collapsed_list">
+            <a href="#" class=""><i class="ion-ios-arrow-up" ></i> INFO</a>
+        </div>
+        </div>
+        <div style="border:none;" id="restaurantDetails-list-item-container1" class="item item-body">
+            <div style="margin-top:0px;color:#000000;" id="restaurantDetails-markdown3">
+                <p class="collaped_txt" style="margin:0;">{{rest_detail.description}}
+</p>
+                    
+                    <div class="cuisin">
+                    <div class="row">
+                        <div class="col">
+                        <p>DRINKS</p>
+                        <h4 ng-repeat="bar_type in rest_detail.typename">{{bar_type.RestaurantsType.name }}</h4>
+                        </div>
+                        
+<!--                        <div class="col">
+                        <P>PRICE:</P>
+                        <h4>$$$<span>$$</span></h4>
+                        </div>-->
+                    </div>
+                    </div>
+            </div>
+        </div>
+        <!--<ion-list id="restaurantDetails-list5">
+            <ion-item style="" id="restaurantDetails-list-item7" class="item-icon-right list_viewmenu">
+                <i style="color:#0F75BC;" class="icon fa fa-link"></i>VIEW MENU</ion-item>
+            <ion-item style="" id="restaurantDetails-list-item8" class="item-icon-right list_viewmenu">
+                <i style="color:#0F75BC;" class="icon fa fa-link"></i>RESTAURANT WEBSITE</ion-item>
+        </ion-list>-->
+        
+       
+        <div class="list">
+            <div class="row opning_hours">
+                <div class="col">
+                <div class="dayleft">
+                    <h4>OPENING HOURS</h4>
+                </div>
+                </div>
+                <div class="col">
+                <div class="time_right">
+                    <h5>Open - Close</h5> 
+                    <h5>{{rest_detail.opening_time}} - {{rest_detail.closing_time}}</h5>
+                </div>
+                </div>
+            </div>
+            
+            
+        
+            
+     
+            
+<!--            <div class="row opning_hours">
+                <div class="col">
+                <div class="dayleft">
+                    <h4>saturday</h4>
+                </div>
+                </div>
+                <div class="col">
+                <div class="time_right">
+                    <h5>7.00 am - 11.00 am</h5>
+                    <h5>11.00 am - 3.00 pm</h5>
+                </div>
+                </div>
+            </div>-->
+            
+        </div>
+        <div class="padding">
+            <div class="collapsed_list">
+            <a href="#" class=""><i class="ion-ios-arrow-up"></i> ADDRESS</a>
+        </div>
+        </div>
+        <div class="contacts">
+        
+            <div class="padding">
+                <p>{{rest_detail.name}}</p>
+                <p>{{rest_detail.address}}</p>
+                <p>{{rest_detail.email}}</p>
+                <p>T: {{rest_detail.phone}}</p>
+            </div>
+        </div>
+        
+        
+    </ion-content>
+
+</ion-view>

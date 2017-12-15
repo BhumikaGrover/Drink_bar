@@ -1,0 +1,161 @@
+<ion-view style="" id="page5" title="Nearest Restaurants"  hide-nav-bar="true">
+
+
+
+<ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+
+    <div class="buttons">
+
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+
+   
+    </div>
+
+    	<h1 class="title">Plans & Billing</h1>
+
+   	<div class="buttons">
+
+   		
+
+ 	</div>
+
+    
+
+ </ion-header-bar>
+
+    <ion-content class="has-header" padding="true" style="background:url({{Dynam_image}}); background-size:100%;">
+
+        <!--<div class="overlay"> </div>-->
+        
+        <div class ng-if="plan_discddd==1">You got 1 month for 4.99 € instead of 9,99 €</div>
+       
+        <div class="restaurant_list14" ng-if="plan_disc == 0 && coupan_used == 1" ng_repeat="plan_list in plan_montly" style="position: relative; z-index: 999; box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2); background: rgba(0, 0, 0, 0.6) none repeat scroll 0px 0px; padding: 17px 0px; border-radius: 3px; margin-bottom: 3%; min-height: 100px; text-align: center;">
+          
+           
+<!--        <img src="{{plan_list.SubscriptionPlan.image}}" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid rgb(255, 255, 255); box-shadow: 0px 0px 7px rgb(255, 255, 255) inset; position: absolute; top: 10px; z-index: 9999; left: 10px;" />-->
+        <ion-radio ng-click="planbuy(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.price - plan_list.SubscriptionPlan.discount,plan_list.SubscriptionPlan.name,plan_list.SubscriptionPlan.discount)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" > 
+        
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 0px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; float: right; line-height: 35px;"> Amount €{{plan_list.SubscriptionPlan.price}} </p>
+           
+         
+    
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; float: right; line-height: 35px;"> Discount €{{plan_list.SubscriptionPlan.discount}} </p>
+           
+        
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; float: right; line-height: 35px;" value="{{plan_list.SubscriptionPlan.price - plan_list.SubscriptionPlan.discount}} ">Pay €{{plan_list.SubscriptionPlan.price - plan_list.SubscriptionPlan.discount}} </p>
+        
+        <span style="color: rgb(255, 255, 255); width: 58%; float: left; font-size: 15px;text-align: left; margin-top: 10px; ">Dummy Line</span>
+        
+        </ion-radio>
+    
+        </div>
+        
+        <!---------->
+        
+       <div class="restaurant_list14" ng-if="plan_disc == 0 && coupan_used == 0" ng_repeat="plan_list in plan_montly" style="position: relative; z-index: 999; box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2); background: rgba(0, 0, 0, 0.6) none repeat scroll 0px 0px; padding: 17px 0px; border-radius: 3px; margin-bottom: 3%; min-height: 100px; text-align: center;">
+          
+           
+<!--        <img src="{{plan_list.SubscriptionPlan.image}}" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid rgb(255, 255, 255); box-shadow: 0px 0px 7px rgb(255, 255, 255) inset; position: absolute; top: 10px; z-index: 9999; left: 10px;" />-->
+        <ion-radio ng-click="planbuy1(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.name)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" > 
+        
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 0px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; float: right; line-height: 35px;"> Amount €{{plan_list.SubscriptionPlan.price}} </p>
+        
+        <span style="color: rgb(255, 255, 255); width: 58%; float: left; font-size: 15px;text-align: left; margin-top: 10px;">Dummy Line</span>
+
+        
+           
+         
+    
+       
+        </ion-radio>
+    
+        </div>
+        <div class="restaurant_list14" ng-if="plan_disc != 0 " ng_repeat="plan_list in plan_montly" style="position: relative; z-index: 999; box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2); background: rgba(0, 0, 0, 0.6) none repeat scroll 0px 0px; padding: 17px 0px; border-radius: 3px; margin-bottom: 3%; min-height: 100px; text-align: center;">
+          
+           
+        <img src="{{plan_list.SubscriptionPlan.image}}" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid rgb(255, 255, 255); box-shadow: 0px 0px 7px rgb(255, 255, 255) inset; position: absolute; top: 10px; z-index: 9999; left: 10px;" />
+        <ion-radio ng-click="planbuy1(plan_list.SubscriptionPlan.id,plan_list.SubscriptionPlan.price,plan_list.SubscriptionPlan.image,plan_list.SubscriptionPlan.name)" style="float: left; background: transparent none repeat scroll 0% 0%; border: medium none; width: 100%; margin: 0px; position: absolute; top: 0;" > 
+        
+        <h2 style="color: rgb(255, 255, 255); margin-bottom: 0px; padding: 7px 0px; position: relative; float: left; z-index: 999; text-transform: uppercase; font-size: 15px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 51%;"> {{plan_list.SubscriptionPlan.name}} </h2>
+        
+
+        <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px; float: right; line-height: 35px;"> Amount €{{plan_list.SubscriptionPlan.price}} </p>
+           
+         
+    <span style="color: rgb(255, 255, 255); width: 58%; float: left; font-size: 15px;text-align: left; margin-top: 10px; ">Dummy Line</span>
+       
+        </ion-radio>
+    
+        </div>
+
+        <!---------->
+        
+<!--    <div class="restaurant_list14" style="position: relative; z-index: 999; box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2); background: rgba(0, 0, 0, 0.6) none repeat scroll 0px 0px; padding: 17px 0px; border-radius: 3px; margin-bottom: 3%;">
+            
+        <center>
+        <img src="img/w5.jpg" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid rgb(255, 255, 255); box-shadow: 0px 0px 7px rgb(255, 255, 255) inset;" />
+<h2 style="color: rgb(255, 255, 255); margin-bottom: 0px; padding: 7px 0px; position: relative; z-index: 999; text-transform: uppercase; font-size: 19px; margin-top: 0px; border: 1px solid rgb(255, 255, 255); width: 53%;">Yearly  </h2>
+ <p style="color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 0px;"> $5.99/month </p></center>
+        </div>-->
+
+        
+
+
+
+		
+
+        
+
+
+<ul class="list bg_none" ng-if="coupan_used ==0">
+     <form ng-submit="referral_plans()" ng-controller="coupanCtrl">
+          <span class="code">Invite Code</span>
+    <li class="item bg_none" style="padding: 30px 10px 5px;">
+       
+  
+   <input type="text" class="white01" ng-model="data.plan_dis" name="re"/>
+   
+   <button type="submit" style="width: auto;float: none;padding: 4px 0px; background: transparent; border: none; font-size:14px;text-decoration:underline;display: block;margin: 0 auto;color: #fff;">Apply Code</button>
+   
+    </li>
+     </form>
+</ul>
+
+<div class="spacer" style="height:4vh;float:left; width:100%;"></div>
+
+
+    </ion-content>
+
+   <div class="bar bar-footer " style="padding:0; background:none;">
+    <div id="payment-button-bar1" class=" button-bar">
+              <button class="button button-assertive  button-block paypal_btn" id="buyNowBtn" style="font-size:13px; margin:0;border-radius: 2px; background:#29E6F2;">Pay now and start to get your free drinks every day</button>
+            </div>
+</div>
+
+
+</ion-view>
+
+<style>
+
+.item-radio input:checked + .radio-content .item-content {
+    background: #000 !important;
+    min-height: 100px !important;
+}
+.item-complex .item-content, .item-radio .item-content{
+    padding: 16px 49px 16px 22px;
+    position: unset;
+}
+.restaurant_list14 .item-radio{
+    height: 100px !important;
+    min-height: 100px !important;
+    border-radius: 3px;
+}
+.radio-content,.item-content{
+    height: 100px;
+}
+
+</style>

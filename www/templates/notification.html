@@ -1,0 +1,46 @@
+<ion-view style="" id="page5" title="Nearest Restaurants"  hide-nav-bar="true">
+
+
+
+<ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+
+<!--    <div class="buttons">
+
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+
+    </ion-nav-buttons>
+
+    </div>-->
+
+    	<h1 class="title">Notification</h1>
+
+   	<div class="buttons">
+
+   		
+
+ 	</div>
+
+    
+
+ </ion-header-bar>
+
+    <ion-content class="has-header" padding="true" style="background:url(img/slide2.jpg); background-size:100%;">
+
+
+        <div class="card" ng-repeat="all_cities in cities">
+  <div class="item item-text-wrap">
+<!--   {{all_cities}}-->
+   <ion-select ng-click="search_city(all_cities)" ng-model="data.city" ng-value="{{all_cities}}" ng-controller="searchCtrl"><li>{{all_cities}}</li></ion-select>
+  </div>
+</div>
+        
+    </ion-content>
+
+<!--   <div class="bar bar-footer " style="padding:0; background:none;">
+    <div id="payment-button-bar1" class=" button-bar">
+              <button class="button button-assertive  button-block paypal_btn" id="buyNowBtn" style="margin:0;border-radius: 2px; background:#29E6F2;">Pay With Paypal</button>
+            </div>
+</div>-->
+
+
+</ion-view>

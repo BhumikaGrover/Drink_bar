@@ -1,0 +1,48 @@
+<ion-view style="" class=" " id="page1" title="Login" hide-nav-bar="true">
+    <ion-content padding="true" style="background: url({{Dynam_image}}) no-repeat center;background-size:cover;" class=" manual-remove-top-padding">
+        <div style="width: 100%; height: 52px;" class="spacer"></div>
+       <div style="width: 100%; height:14vh;" class="spacer"></div>
+<center><img src="img/logo2.png" style="width: 60%;" /></center>
+           
+<!--        <h3 style="text-align:center; color:#fff; margin:;">Sign In</h3>-->
+        
+       
+          <form class="list border_none" id="login-form2" name="Login" ng-submit="referral_code()">
+            <div class="form_sinn">
+            <label id="login-input2" class="item item-input item-floating-label">
+                <span class="input-label">Referral Code</span>
+                <input style="padding-right: 0; color:white;" placeholder="{{'If_you_got_a_Referral_Code_Please_enter_here' | translate}}" type="text" name="re" ng-model="data.re" >
+            </label>
+          
+            <button class="button sky_blue  button-block" style="border-radius:0px+6;" type="submit" id="login-button1">{{'Apply'| translate}}</button>
+        </div>
+        </form>
+
+          <!--<div class="login_bottom"> 
+          <h5 style="color:#fff; float:left;" id="login-heading1">New here ? 
+          <a ui-sref="menu.signup" style="color:#ccc;padding-left:5px; font-weight:700; text-decoration:none;">Signup</a>
+          </h5> 
+          
+          <h5 style="color:#fff; float:right;" id="login-heading1">
+          <a ui-sref="menu.forgotPassword" style="color:#ccc;padding-left:5px; font-weight:700; text-decoration:none;">Forgot password</a>
+          </h5>
+          
+          </div>-->
+          
+         
+            
+            <button ui-sref="menu.location" class="button button-light  button-block button-clear button_txt1" id="createProfile-button3">{{'If_you_donot_have_a_Referral_Code_click_here_to_continue'| translate}}</button>
+           
+            
+         
+            
+            
+        
+    </ion-content>
+</ion-view>
+<style>
+input[type="password"],input[type="email"]{
+	color: #fff !important; 
+  opacity:1 !important;
+  }
+</style>
